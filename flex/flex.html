@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex布局</title>
+  <style>
+    .container {
+      display: flex;
+      height: 90vh;
+      /* width: 800px; */
+      margin: 0 auto;
+      border: 2px solid red;
+      /* 控制主轴方向 */
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      gap: 10px;
+      /* 控制是否换行 */
+      /* flex-wrap: wrap; */
+    }
+    .smallBox {
+      /* 控制收缩 默认值为1 0为不收缩 */
+      flex-shrink: 1;
+
+      background-color: aqua;
+      /* margin: 10px; */
+      width: 150px;
+      height: 150px;
+    }
+    .item {
+      /* 控制增长 */
+      flex-grow: 1;
+      max-width: 30vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="smallBox item">1</div>
+    <div class="smallBox">2</div>
+    <div class="smallBox">3</div>
+    <div class="smallBox">4</div>
+    <div class="smallBox">5</div>
+    <!-- <div class="smallBox">6</div>
+    <div class="smallBox">7</div>
+    <div class="smallBox">8</div>
+    <div class="smallBox">9</div> -->
+  </div>
+  
+</body>
+</html>

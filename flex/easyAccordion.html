@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>useCss</title>
+  <style>
+    .box {
+      /* 居中 */
+      margin: 10px auto;
+      /* 设置高度 */
+      height: 900px;
+      /* flex布局 */
+      display: flex;
+      /* 改变主轴 */
+      flex-direction: column;
+    }
+
+    .img {
+      flex: 1;
+      /* 必须设置minh，不然auto无法缩小到原大小之下 */
+      min-height: 0;
+      object-fit: cover;
+      /* 圆角 */
+      border-radius: 20px;
+      box-shadow: 0 6px 12px rgba(128, 128, 128, 0.3);
+      /* 动画过渡 */
+      transition: all 0.5s ease;
+    }
+
+    .img:hover {
+      flex: 6;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img src="../img/1.jpg" alt="" class="img">
+    <img src="../img/2.jpg" alt="" class="img">
+    <img src="../img/3.png" alt="" class="img">
+    <img src="../img/4.png" alt="" class="img">
+    <img src="../img/5.png" alt="" class="img">
+    <img src="../img/6.png" alt="" class="img">
+  </div>
+</body>
+</html>

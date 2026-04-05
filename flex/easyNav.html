@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>myTry</title>
+  <style>
+    .nav {
+      /* 弹性布局 */
+      display: flex;
+      /* 设置宽高 */
+      height: 15vh;
+      width: 100%;
+      /* 背景颜色 */
+      background-color: aqua;
+      /* 设置子元素在主轴的排列方式 */
+      justify-content: space-between;
+      /* 元素间距 */
+      gap: 10px;
+      /* 不换行 */
+      flex-wrap: nowrap;
+      /* 超出隐藏 */
+      overflow: hidden;
+    }
+    .item {
+      /* 子元素宽高 */
+      /* width: 400px; */
+      flex: 1;
+      height: 100%;
+      /* 设置最小宽高 */
+      min-height: 30px;
+      min-width: 100px;
+      /* 背颜色 */
+      background-color: blueviolet;
+    }
+    img {
+      /* 图片最大宽高 */
+      /* max-height: 100%;
+      max-width: 128px; */
+      /* 最小高度 */
+      /* min-height: 30px; */
+      height: 100%;       /* 让图片跟父盒子等高 */
+      max-width: 100%;    /* 但宽度不能超过父盒子 */
+      object-fit: contain; /* 保持比例 */
+
+    }
+    #bt {
+      width: 200px;
+      min-width: 100px;
+      min-height: 30px;
+      max-width: 400px;
+      background-color: black;
+    }
+    .s1 {
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+    .s2 {
+      flex-grow: 2;
+      flex-shrink: 2;
+    }
+    .s3 {
+      flex-grow: 3;
+      flex-shrink: 3;
+    }
+    .s4 {
+      flex-grow: 4;
+      flex-shrink: 4;
+    }
+    .s5 {
+      flex-grow: 5;
+      flex-shrink: 5;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <img src="../img/小logo.png" alt="">
+    <div class="item s1"></div>
+    <div class="item s2"></div>
+    <div class="item s3"></div>
+    <div class="item s4"></div>
+    <div class="item s5"></div>
+    <div id="bt"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flex Nav</title>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;      /* 垂直居中 */
+    height: 70px;
+    padding: 0 20px;
+    /* background-color: white; */
+    gap: 20px;
+  }
+
+  /* ===== 左侧 logo ===== */
+  .logo {
+    height: 100%;
+  }
+
+  .logo img {
+    height: 100%;
+    width: auto;
+    display: block;
+  }
+
+  /* ===== 中间菜单 ===== */
+  .menu {
+    flex: 1;                /* 核心：自动撑开 */
+    display: flex;
+    gap: 15px;
+  }
+
+  .menu-item {
+    flex: 1;
+    min-width: 80px;
+    background: blueviolet;
+    height: 70px;
+  }
+
+  /* ===== 右侧按钮 ===== */
+  .btn {
+    width: 120px;
+    height: 40px;
+    background: black;
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+
+  <!-- 左侧 -->
+  <div class="logo">
+    <img src="../img/小logo.png" alt="">
+  </div>
+
+  <!-- 中间 -->
+  <div class="menu">
+    <div class="menu-item"></div>
+    <div class="menu-item"></div>
+    <div class="menu-item"></div>
+    <div class="menu-item"></div>
+  </div>
+
+  <!-- 右侧 -->
+  <div class="btn"></div>
+
+</div>
+
+</body>
+</html>

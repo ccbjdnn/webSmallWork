@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>review</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    /* ins {
+      控制不了锚点跳转过渡
+      animation: all 1s ease; 
+    } */
+  </style>
+</head>
+
+<body>
+  <!-- h5新标签 -->
+  <header>网页头部标签</header>
+  <nav>导航栏标签</nav>
+  <main>
+    <aside>侧边栏标签</aside>
+    <article>文章标签</article>
+    <section>章节标签</section>
+  </main>
+  <footer>网页底部标签</footer>
+  <hr>
+  <!--下划线 -->
+  <ins id="1">这是一个插入的文本</ins><br>
+  <!-- 删除线 -->
+  <del>这是一个删除的文本</del><br>
+  <!-- 斜体 -->
+  <em>这是一个斜体的文本</em><br>
+  <!-- 加粗 -->
+  <strong>这是一个加粗的文本</strong><hr>
+  <!-- w+h等比缩放 title是悬停提示 -->
+  <img src="./img/1.jpg" alt="" width="250px" title="这是一张图片"><br>
+  <!-- 视频 -->
+  <!-- 自动播放 循环播放 静音播放 封面 -->
+  <video src="./video/诗.mp4" width="250px" autoplay loop muted poster="./img/1.jpg"></video><br>
+  <!-- 资源类型 -->
+  <video autoplay loop muted width="350px">
+    <source src="./video/诗.mp4" type="video/mp4">
+    <p>肥肠豹欠</p>
+  </video><hr>
+  <!-- 音频同理 -->
+   <!-- 邮箱链接 -->
+   <a href="mailto:2958457028@qq.com">联系&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们</a><br>
+   <a href="#1">锚点跳转</a><hr>
+   <!-- 描述列表 -->
+   <dl>
+    <dt>bj</dt>
+    <dd>galgame</dd>
+    <dd>code</dd>
+    <dd>do</dd>
+   </dl><hr>
+   <!-- 表格 -->
+   <table border="1" cellspacing="0">
+    <thead>
+      <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>张三</td>
+        <td>18</td>
+        <td>男</td>
+      </tr>
+    </tbody>
+   </table>
+   <hr>
+   <!-- form单 -->
+  <form>
+    <ul>
+      <li><label> 登录:<input type="text" placeholder="请输入登录账号" autocomplete="off"></label></li>
+      <li>密码:<input type="password" placeholder="请输入密码" autocomplete="off"></li>
+      <li><label for="file">上传头像:</label><input id="file" placeholder="请选择上传的头像" type="file" accept="image/*" multiple></li>
+      <li><input type="submit" value="登录"></li>
+    </ul>
+  </form>
+</body>
+
+</html>

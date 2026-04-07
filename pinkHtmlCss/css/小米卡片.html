@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ciallo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #f5f5f5;
+    }
+    .card {
+      width: 234px;
+      height: 300px;
+      background-color: #fff;
+      margin: 50px auto;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .card:hover {
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    img {
+      width: 160px;
+      margin-top: 20px;
+    }
+    .title {
+      margin-top: 20px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .desc {
+      font-size: 12px;
+      font-weight: 400;
+      padding: 0 15px;
+      color: #b0b0b0;
+      /* -----单行文本移除省略号----- */
+      /* 超出部分隐藏 */
+      overflow: hidden;
+      /* 文字超出部分用省略号表示 */
+      text-overflow: ellipsis;
+      /* 不换行 */
+      white-space: nowrap;
+    }
+    .price {
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 400;
+      font-weight: bold;
+    }
+    del {
+      color: #b0b0b0;
+    }
+    span {
+      color: #ff6700;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="../../img/小logo.png" alt="">
+    <h3 class="title">CCBJ</h3>
+    <p class="desc">ciallo|ciallo|ciallo|ciallo|ciallo|ciallo|ciallo|ciallo</p>
+    <p class="price">
+      <span>¥2999&nbsp;</span>
+      <del>$1999</del>
+    </p>
+  </div>
+</body>
+</html>

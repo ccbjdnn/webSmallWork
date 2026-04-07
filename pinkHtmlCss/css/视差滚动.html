@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fixd</title>
+  <style>
+    * {
+      /* 消除默认的外边距和内边距 */
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      /* 设置视口高度为100vh，确保视差滚动效果 */
+      height: 100vh;
+    }
+    .box1 {
+      /* ---------图片路径 不重复 固定背景 中心对齐 覆盖背景区域 */
+      background: url('../../img/bg1.png') no-repeat fixed center center/cover;
+      /* 设置高度为100vh，确保视差滚动效果 */
+      height: 100vh;
+    }
+    .box2 {
+      background: url('../../img/bg2.png') no-repeat fixed center center/cover;
+      height: 100vh;
+    }
+    .box3 {
+      background: url('../../img/bg3.png') no-repeat fixed center center/cover;
+      height: 100vh;
+    }
+    .box4 {
+      background: url('../../img/bg4.png') no-repeat fixed center center/cover;
+      height: 100vh;
+    }
+    .content {
+      /* 设置内容宽度为100%，确保与背景宽度一致 */
+      width: 100%;
+      height: 20%;
+      /* 设置内容背景颜色为半透明黑色，确保内容可见 */
+      background-color: rgba(0, 0, 0, 0.7);
+      /* 设置内容字体颜色为白色，确保内容可见 */
+      color: #fff;
+      /* 设置内容字体大小为1.5rem*/
+      font-size: 1.5rem;
+      /* 设置内容内边距为2rem 0，确保内容与背景距离 */
+      padding: 2rem 0;
+      /* 设置内容文本居中对齐 */
+      text-align: center;
+      line-height: 3rem;
+    }
+    p {
+      color: #fff;
+      font-size: 4rem;
+      text-align: center;
+      line-height: 20%;
+      padding-top: 15%;
+      font-weight: bold;
+      text-shadow: 0 0 10px #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box1">
+      <div class="content">《天之少女》（日语：天ノ少女）是Innocent Grey制作的悬疑猎奇AVG，是《壳之少女》系列的最终作。2020年12月11日公布体验版（前日谭），2020年12月25日正篇发售。</div>
+      <p>天之少女</p>
+    </div>
+    <div class="box2">
+      <div class="content">《星空列车与白的旅行》（日文版名：星空鉄道とシロの旅）是日本shiratamaco于2020年12月30日发售的恋爱冒险类型游戏[1]。本作是shiratamaco的第一个作品。2021年5月14日由inc.ZOFE和Syawase Works在Steam推出中文版[2]。游戏简称“星シロ”[3]。</div>
+      <p>星空列车与白的旅行</p>
+    </div>
+    <div class="box3">
+      <div class="content">峰城大附属高中3年级A班学生，同时也是一个连续两年获得峰城大附属小姐称号的高岭之花般的偶像。虽然受到周围的追捧，被误认为大小姐一般的存在，但其实只是普通中产家庭的长女，平日靠打工自己挣零花钱。爱好是唱歌，同时唱功在普通人看来已经十分了得，并喜欢独自一人卡拉OK，也曾创造连续飙歌3小时的纪录。</div>
+      <p>小木曾雪菜</p>
+    </div>
+    <div class="box4">
+      <div class="content">冬马和纱，Leaf会社制作的游戏《白色相簿2》及其衍生作品的女主角之一。北原春希的邻座，拥有一头乌黑长发、模特般高挑身材、孤高和叛逆性格的美少女。在遇到小木曾雪菜等人之前就与北原春希互有好感，但在雪菜加入后开始隐藏感情，也因自己的性格和糟糕的交际能力，导致在校期间一直未表达出自己的心意。</div>
+      <p>冬马和纱</p>
+    </div>
+  </div>
+</body>
+</html>

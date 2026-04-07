@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>伪类选择器</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      font-size: 30px;
+      text-align: center;
+      line-height: 200px;
+      transition: all 0.5s;
+    }
+
+    .box:hover {
+      background-color: pink;
+      color: #fff;
+    }
+
+    #write {
+      width: 200px;
+      height: 20px;
+      transition: all 0.5s;
+    }
+
+    #write:focus {
+      background-color: #FFAEC9;
+      opacity: 0.2;
+      width: 300px;
+    }
+
+    ul {
+      width: 50vh;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    li {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      transition: all 0.5s;
+    }
+
+    .ul1 li:first-child {
+      opacity: 0.5;
+    }
+
+    .ul1 li:nth-child(2) {
+      opacity: 0.6;
+    }
+
+    .ul1 li:last-child {
+      opacity: 0.7;
+    }
+
+    .ul1 li:hover {
+      opacity: 0.8;
+    }
+
+    .ul2 li:nth-child(odd) {
+      background-color: red;
+    }
+
+    .ul2 li:nth-child(even) {
+      background-color: blue;
+    }
+
+    /* 可放简单表达式 */
+    .ul2 li:nth-child(3n + 1) {
+      background-color: green;
+    }
+
+    button {
+      width: 200px;
+      height: 40px;
+      border: none;
+      background-color: pink;
+      transition: all 0.5s;
+    }
+
+    button:disabled {
+      opacity: .4;
+    }
+
+    #agree:checked+label {
+      color: pink;
+    }
+    label {
+      transition: all 0.5s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">ciallo</div>
+  <input type="text" id="write">
+  <ul class="ul1">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <hr>
+  <ul class="ul2">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <hr>
+  <button disabled>ciallo</button><br>
+  <input type="checkbox" id="agree">
+  <label for="agree">同意协议</label>
+  <script>
+    // 1. 获取元素
+    const agree = document.querySelector('#agree');
+    const btn = document.querySelector('button');
+    // 2. 添加点击事件
+    agree.addEventListener('click', function () {
+      // 3. 根据复选框状态解除禁用
+      btn.disabled = !this.checked;
+      console.log(this.checked);
+    });
+  </script>
+</body>
+
+</html>

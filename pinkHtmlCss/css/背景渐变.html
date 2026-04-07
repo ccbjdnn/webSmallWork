@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>背景渐变</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .box1 {
+      width: 300px;
+      height: 140px;
+      /* 角度设置为45度，实现对角渐变效果，0度是12点钟方向 */
+      /* background: linear-gradient(45deg, red, yellow); */
+      /* 方向设置为从左到右，实现水平渐变效果 */
+      /* background: linear-gradient(to right, red, yellow); */
+      /* 渐变颜色设置为从红色到黄色，40%位置开始为黄色 */
+      background: linear-gradient(to right, red 0%, yellow 40%);
+    }
+    .text {
+      font-size: 20px;
+      line-height: 140px;
+      background: linear-gradient(to right, red 0%, yellow 80%);
+      /* 文本内容被裁剪，只显示渐变区域 */
+      -webkit-background-clip: text;
+      background-clip: text;
+      /* 文本颜色设置为透明，实现透明效果 */
+      -webkit-text-fill-color: transparent;
+    }
+    .box2 {
+      width: 300px;
+      height: 300px;
+      background-color: #fff;
+      /* background: radial-gradient(circle, red, yellow); */
+      /* radial-gradient(形状 大小 at 位置, 颜色1, 颜色2, ...) */
+      /* background: radial-gradient(circle at 30% 40%, red, yellow); */
+      background: radial-gradient(circle at center, white 0%, black 70%);
+    } 
+    .box3 {
+      width: 300px;
+      height: 300px;
+      background-color: #fff;
+      /* 0–20% 全红 20–40% 红→黄 40–70% 黄→蓝 */
+      background: radial-gradient(circle, red 20%, yellow 40%, blue 70%);
+    } 
+  </style>
+</head>
+<body>
+  <div class="box1"></div>
+  <div class="text">这是一个背景渐变的文本</div>
+  <div class="box2"></div>
+  <div class="box3"></div>
+</body>
+</html>

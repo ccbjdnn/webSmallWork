@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>伪元素</title>
+  <style>
+    /* 选择第一个字母 */
+    p::first-letter {
+      font-size: 30px;
+    }
+    /* 选择第一行 */
+    p::first-line {
+      color: pink;
+    }
+    /* 选择第一个行 */
+    textarea{
+      width: 300px;
+      height: 100px;
+    }
+    /* 选择placeholder */
+    textarea::placeholder {
+      color: pink;
+      font-size: 20px;
+    }
+    div {
+      background-color: aqua;
+      width: 200px;
+      text-align: center;
+    }
+    /* content必写，可以给‘’ */
+    div::before {
+      content: '我要';
+      color: red;
+    }
+    div::after {
+      content: '不要';
+      color: forestgreen;
+    }
+  </style>
+</head>
+<body>
+  <p>ciallociallociallociallociallociallocia
+    llociallociallociallociallociallocialloc
+    iallociallociallociallociallociallociall
+    lociallociallociallociallociallocialloc
+  </p>
+  <textarea name="" id="" placeholder="请输入内容"></textarea>
+  <div>
+    ciallo
+  </div>
+</html>

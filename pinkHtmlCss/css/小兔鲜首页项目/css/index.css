@@ -1,0 +1,147 @@
+.entry {
+  height: 500px;
+  background-color: #F5F5F5;
+}
+
+.entry .w {
+  height: 100%;
+  background: url(../uploads/banner1.png) no-repeat center center;
+}
+
+.category {
+  height: 500px;
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.42);
+}
+
+.category li {
+  padding: 0 12px 0 29px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: aqua; */
+  color: #fff;
+}
+
+.category li:hover {
+  background-color: #00BE9A;
+}
+
+.category li a {
+  font-family: PingFangSC-Medium;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: left;
+  font-weight: 500;
+}
+
+.category li a[data-id="1"] {
+  font-family: PingFangSC-Medium;
+  font-size: 16px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: left;
+  line-height: 22px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.box-hd {
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box-hd h2 {
+  font-family: PingFangSC-Regular;
+  font-size: 30px;
+  color: #333333;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.box-hd h2 small {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #A1A1A1;
+  letter-spacing: 0;
+  font-weight: 400;
+  margin-left: 35px;
+}
+
+.box-hd a {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #A1A1A1;
+  letter-spacing: 0;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.box-hd a i {
+  margin-left: 10px;
+}
+
+.box-bd ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box-bd li {
+  background-color: #EEF9F4;
+  height: 404px;
+  width: 304px;
+}
+
+.box-bd li img {
+  height: 304px;
+  width: 304px;
+}
+
+.box-bd li h3 {
+  font-family: PingFangSC-Regular;
+  font-size: 20px;
+  color: #333333;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: 400;
+  margin: 18px 0 14px;
+}
+
+.box-bd li p {
+  font-family: PingFangSC-Regular;
+  font-size: 22px;
+  color: #AA2113;
+  letter-spacing: 1.1px;
+  line-height: 31px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.box-bd li p span {
+  font-size: 16px;
+}
+
+.box-bd li a {
+  display: block;
+  height: 100%;
+}
+
+.hot .box-bd li p {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #A1A1A1;
+  letter-spacing: 0;
+  text-align: center;
+  font-weight: 400;
+}
+
+.hot .box-bd li {
+  background-color: #ffffff;
+  height: 404px;
+  width: 304px;
+}

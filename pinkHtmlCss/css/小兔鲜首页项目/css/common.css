@@ -1,0 +1,236 @@
+/* 板心 */
+.w {
+  width: 1240px;
+  margin: 0 auto;
+  /* background-color: pink; */
+}
+
+/* speedNav */
+.speedNav {
+  height: 52px;
+  background-color: #333333;
+}
+
+.speedNav ul {
+  height: 52px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.speedNav li a {
+  color: #fff;
+}
+
+.speedNav li a:hover {
+  color: #5EB69C;
+}
+
+.speedNav li.line {
+  width: 1px;
+  height: 12px;
+  background-color: #999;
+  margin: 0 15px;
+}
+
+.speedNav li a i {
+  font-size: 17px;
+}
+
+/* 第一个li给#5EB69C 颜色 */
+.speedNav li:first-child a {
+  color: #5EB69C;
+}
+
+
+/* header  */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 132px;
+  /* background-color: pink; */
+}
+
+.logo {
+  width: 200px;
+  height: 88px;
+}
+
+.header h1 {
+  width: 100%;
+  height: 100%;
+}
+
+.header h1 a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../images/logo.png) no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 48px;
+}
+
+.nav li a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+}
+
+.nav li a:hover {
+  color: #5EB69C;
+  border-bottom: 2px solid #5EB69C;
+}
+
+.search input {
+  width: 170px;
+  height: 40px;
+  font-size: 16px;
+  padding-left: 28px;
+  border-bottom: 2px solid #F4F4F4;
+}
+
+.search input::placeholder {
+  color: #CCCCCC;
+  font-size: 16px;
+}
+
+.car i {
+  font-size: 38px;
+  margin-right: 15px;
+}
+
+
+
+
+
+/* footer */
+.footer {
+  height: 581.5px;
+  background-color: #f5f5f5;
+}
+
+.footer .slogan {
+  height: 178px;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.slogan ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.slogan ul li {
+  display: flex;
+  align-items: center;
+  height: 178px;
+}
+
+.slogan ul li h5 {
+  width: 58px;
+  height: 58px;
+  background: url(../images/sprite.png) no-repeat;
+}
+
+.slogan ul li h5.icon2 {
+  background-position: 0 -58px;
+}
+
+.slogan ul li h5.icon3 {
+  background-position: 0 -116px;
+}
+
+.slogan ul li h5.icon4 {
+  background-position: 0 -174px;
+}
+
+.slogan ul li p {
+  font-family: PingFangSC-Regular;
+  font-size: 28px;
+  color: #333333;
+  letter-spacing: 0;
+  font-weight: 400;
+  margin-left: 20px;
+}
+
+.service {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+.service-left {
+  display: flex;
+  justify-content: space-between;
+  gap: 84px;
+}
+
+.service-left dt {
+  font-family: PingFangSC-Regular;
+  font-size: 18px;
+  color: #333333;
+  margin-bottom: 30px;
+}
+
+.service-left dd a {
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #969696;
+  letter-spacing: 0;
+  line-height: 22px;
+  font-weight: 400;
+  margin-bottom: 10.5px;
+}
+
+.service-left dd a i {
+  color: #5EB69C;
+}
+
+.service-right ul {
+  display: flex;
+  text-align: center;
+  gap: 55px;
+}
+
+.service-right ul p {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #969696;
+  letter-spacing: 0;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.copyright {
+  margin-top: 100px;
+}
+
+.copyright p {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #A1A1A1;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 30px;
+  font-weight: 400;
+}
+
+.copyright p a {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #A1A1A1;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 30px;
+  font-weight: 400;
+}

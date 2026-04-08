@@ -1,0 +1,121 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "109717",
+      "name": "answer",
+      "font_class": "answer",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "109723",
+      "name": "cart",
+      "font_class": "cart",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "109724",
+      "name": "check",
+      "font_class": "check",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "109726",
+      "name": "computer",
+      "font_class": "computer",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "109732",
+      "name": "down",
+      "font_class": "down",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "109735",
+      "name": "emoji",
+      "font_class": "emoji",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "109754",
+      "name": "like",
+      "font_class": "like",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "109756",
+      "name": "loading",
+      "font_class": "loading",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "109758",
+      "name": "lock",
+      "font_class": "lock",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "109766",
+      "name": "my",
+      "font_class": "my",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "109789",
+      "name": "sitting",
+      "font_class": "sitting",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "109790",
+      "name": "tag",
+      "font_class": "tag",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "109798",
+      "name": "unlock",
+      "font_class": "unlock",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "109799",
+      "name": "upload",
+      "font_class": "upload",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "109800",
+      "name": "video",
+      "font_class": "video",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "153750",
+      "name": "people3",
+      "font_class": "people3",
+      "unicode": "e664",
+      "unicode_decimal": 58980
+    }
+  ]
+}

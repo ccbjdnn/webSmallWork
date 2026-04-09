@@ -90,6 +90,18 @@
   border-bottom: 2px solid #5EB69C;
 }
 
+.search {
+  position: relative;
+}
+
+.search i {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  font-size: 24px;
+  color: #ccc;
+}
+
 .search input {
   width: 170px;
   height: 40px;

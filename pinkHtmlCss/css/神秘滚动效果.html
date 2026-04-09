@@ -80,7 +80,9 @@
   <script>
     const ul = document.querySelector('.box ul');
     ul.addEventListener('wheel', e => {
+      // 阻止默认事件
       e.preventDefault()
+      // 滚动距离
       ul.scrollLeft += e.deltaY * 2;
     })
   </script>

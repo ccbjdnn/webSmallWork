@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>grid</title>
+  <title>grid合并网格线</title>
   <style>
     .container {
       border: 2px solid red;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
       margin: 200px 200px;
       grid-gap: 10px;
     }
@@ -17,8 +17,13 @@
     .item {
       border: 2px solid blue;
       background-color: pink;
-      width: 100px;
       height: 100px;
+    }
+
+    .container>.item:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 2;
+      height: auto;
     }
   </style>
 </head>

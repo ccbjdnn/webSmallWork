@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>两面翻转</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .card {
+      position: relative;
+      width: 1000px;
+      height: 564px;
+      margin: 100px auto;
+      perspective: 1000px;
+    }
+
+    .card .front {
+      z-index: 1;
+    }
+
+    .card .front,
+    .card .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* 隐藏反面 */
+      backface-visibility: hidden;
+      transition: all 1s;
+    }
+
+    .card .back {
+      /* 背面初始为反 */
+      transform: rotateY(180deg);
+    }
+
+    .card:hover .back {
+      transform: rotateY(0deg);
+    }
+
+    .card:hover .front {
+      /* 注意方向 */
+      transform: rotateY(-180deg);
+    }
+
+    img {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="front">
+      <img src="../../img/bg4.png" alt="">
+    </div>
+    <div class="back">
+      <img src="../../img/bg3.png" alt="">
+    </div>
+  </div>
+</body>
+
+</html>

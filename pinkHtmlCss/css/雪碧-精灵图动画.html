@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      background-color: #ccc;
+    }
+
+    .box {
+      /* 单帧宽度 */
+      width: 422px;
+      /* 单帧高度 */
+      height: 560px;
+      margin: 100px auto;
+      border: 2px solid red;
+      background: url("../../img/神秘雪碧图.png") no-repeat;
+      background-size: calc(1688px*2) calc(280px*2);
+      animation: play 1s steps(8) infinite;
+    }
+
+    @keyframes play {
+      from {
+        background-position: 0 0;
+      }
+
+      to {
+        background-position: calc(-1688px*2) 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+</body>
+
+</html>

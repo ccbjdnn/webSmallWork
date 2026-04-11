@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>usejs</title>
   <style>
     .box {
-      height: 1000px;
+      height: 100vh;
       display: flex;
       width: 80%;
       margin: 0 auto;
     }
+
     .img {
       object-fit: cover;
       min-width: 0;
@@ -18,11 +20,13 @@
       border-radius: 40px;
       transition: all 1s ease;
     }
+
     .active {
       flex: 9;
     }
   </style>
 </head>
+
 <body>
   <div class="box">
     <img src="../img/1.jpg" alt="" class="img">
@@ -42,9 +46,10 @@
       }
     })
     //离开时去除active
-    document.querySelector('.box').addEventListener('mouseleave',() => {
+    document.querySelector('.box').addEventListener('mouseleave', () => {
       document.querySelector('.active') && document.querySelector('.active').classList.remove('active')
     })
   </script>
 </body>
+
 </html>

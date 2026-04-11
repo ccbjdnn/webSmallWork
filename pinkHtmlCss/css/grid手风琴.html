@@ -1,0 +1,82 @@
+<!-- 第一次hover进入会突变不知道什么原因 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid手风琴</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      height: 100vh;
+      transition: 1s;
+    }
+
+    .container div {
+      background-size: cover;
+      background-position: center;
+      transition: 1s;
+    }
+
+    /* 关键 */
+    /* 通过has父亲选择器实现手风琴效果 */
+    .container:has(div:nth-child(1):hover) {
+      grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+    }
+
+    .container:has(div:nth-child(2):hover) {
+      grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+    }
+
+    .container:has(div:nth-child(3):hover) {
+      grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+    }
+
+    .container:has(div:nth-child(4):hover) {
+      grid-template-columns: 1fr 1fr 1fr 3fr 1fr;
+    }
+
+    .container:has(div:nth-child(5):hover) {
+      grid-template-columns: 1fr 1fr 1fr 1fr 3fr;
+    }
+
+    .item1 {
+      background: url(../../img/1.jpg) no-repeat;
+    }
+
+    .item2 {
+      background: url(../../img/2.jpg) no-repeat;
+    }
+
+    .item3 {
+      background: url(../../img/3.png) no-repeat;
+    }
+
+    .item4 {
+      background: url(../../img/4.png) no-repeat;
+    }
+
+    .item5 {
+      background: url(../../img/5.png) no-repeat;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item1"></div>
+    <div class="item2"></div>
+    <div class="item3"></div>
+    <div class="item4"></div>
+    <div class="item5"></div>
+  </div>
+</body>
+
+</html>

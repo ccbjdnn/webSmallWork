@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bjWheels</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .box {
+      height: 128px;
+      width: calc(128px* 11);
+      border: 1px solid #000;
+      background-color: rgba(0, 0, 0, .2);
+    }
+
+    img {
+      height: 100%;
+      width: 128px;
+      transition: all 1s;
+    }
+
+    img:hover {
+      /* 平移旋转 */
+      transform: translateX(calc(128px* 10)) rotate(3600deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <img src="../../img/小logo.png" alt="">
+  </div>
+</body>
+
+</html>

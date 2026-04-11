@@ -19,21 +19,43 @@
       background-color: rgba(0, 0, 0, .2);
     }
 
-    img {
+    .box img {
       height: 100%;
       width: 128px;
       transition: all 1s;
     }
 
-    img:hover {
+    .box:hover img {
       /* 平移旋转 */
       transform: translateX(calc(128px* 10)) rotate(3600deg);
+    }
+
+    .card {
+      height: 128px;
+      width: 128px;
+      background-color: rgba(0, 0, 0, .2);
+      border: 1px solid #000;
+      margin: 50px auto;
+      transition: all 1s;
+    }
+
+    .card:hover {
+      transform: perspective(500px) rotateY(360deg) scale(1.1);
+    }
+
+    .card img {
+      height: 100%;
+      width: 128px;
+      transition: all 1s;
     }
   </style>
 </head>
 
 <body>
   <div class="box">
+    <img src="../../img/小logo.png" alt="">
+  </div>
+  <div class="card">
     <img src="../../img/小logo.png" alt="">
   </div>
 </body>

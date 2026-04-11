@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>彩色边框</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: black;
+    }
+
+    a {
+      /* 内边距撑开span */
+      padding: 3px;
+      position: relative;
+      margin: 100px auto 50px;
+      display: block;
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border-radius: 10px;
+      /* 去除下划线 */
+      text-decoration: none;
+      color: #fff;
+      /* 隐藏超出的渐变背景 */
+      overflow: hidden;
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #a18cd1, #fbc2eb);
+      background-size: 50% 100%;
+    }
+
+    @keyframes move {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    a:hover::after {
+      animation: move .5s linear infinite;
+    }
+
+    span {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      background-color: #000;
+      height: 100%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="">
+    <span>Start</span>
+  </a>
+
+  </div>
+</body>
+
+</html>

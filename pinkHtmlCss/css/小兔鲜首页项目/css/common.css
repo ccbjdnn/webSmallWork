@@ -18,6 +18,11 @@
   align-items: center;
 }
 
+.speedNav .rotate:hover i {
+  transform: rotate(360deg);
+  transition: all 0.4s;
+}
+
 .speedNav li a {
   color: #fff;
 }
@@ -35,12 +40,13 @@
 
 .speedNav li a i {
   font-size: 17px;
+  display: inline-block;
 }
 
 /* 第一个li给#5EB69C 颜色 */
-.speedNav li:first-child a {
+/* .speedNav li:first-child a {
   color: #5EB69C;
-}
+} */
 
 
 /* header  */

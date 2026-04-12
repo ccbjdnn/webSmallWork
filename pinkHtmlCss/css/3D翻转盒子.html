@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>翻转盒子</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #ccc;
+    }
+
+    .box {
+      margin-top: -150px;
+      position: relative;
+      height: 84px;
+      width: 300px;
+      transform-style: preserve-3d;
+      transition: all 0.5s;
+    }
+
+    .box:hover {
+      transform: rotateX(90deg);
+    }
+
+    .box div {
+      position: absolute;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .front {
+      transform: translateZ(84px)
+    }
+
+    .bottom {
+      transform: translateY(84px) rotateX(-90deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="front"><img src="../../img/bg4.png" alt=""></div>
+    <div class="bottom"><img src="../../img/bg3.png" alt=""></div>
+  </div>
+</body>
+
+</html>

@@ -58,16 +58,15 @@
       z-index: 1;
     }
 
-    /* 改变了margin有抖动bug */
     .box:hover .item:not(:hover) {
       transform: perspective(500px) scale(0.8) rotateY(45deg);
+      /* 改变了margin有抖动bug */
       margin: 0 -20px;
     }
 
     /*  鼠标经过时其他兄弟改变角度 */
     .box .item:hover~.item {
       transform: perspective(500px) scale(0.8) rotateY(-45deg);
-      margin: 0 -20px;
     }
   </style>
 </head>

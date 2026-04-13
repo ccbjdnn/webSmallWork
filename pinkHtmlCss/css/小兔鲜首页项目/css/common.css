@@ -166,11 +166,11 @@
 }
 
 .slogan ul li h5.icon3 {
-  background-position: 0 -116px;
+  background-position: 0 calc(-58px * 2);
 }
 
 .slogan ul li h5.icon4 {
-  background-position: 0 -174px;
+  background-position: 0 calc(-58px * 3);
 }
 
 .slogan ul li p {

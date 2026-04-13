@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>timeline</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0 auto;
+      width: 100%;
+      height: 100vh;
+      background-color: #ccc;
+      overflow: hidden;
+      /* 提升 timeline 的作用域，让它的兄弟元素（.line）也能访问 */
+      timeline-scope: --box-scroll;
+    }
+
+    .box {
+      margin: 0 auto;
+      width: 80%;
+      height: 100%;
+      background-color: #fff;
+      /* 滚动条 */
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* 命名滚动时间线 */
+      scroll-timeline-name: --box-scroll;
+    }
+
+    header {
+      position: fixed;
+      top: 3px;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+      /* 背景透明 */
+      background-color: transparent;
+      /* 模糊 */
+      backdrop-filter: blur(3px);
+    }
+
+    .line {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      /* 彩色背景线条 */
+      background: linear-gradient(90deg, #000, #f00, #0f0, #00f);
+      /* 动画 */
+      /* 保持动画在滚动时保持一致 */
+      animation: moveLine linear forwards;
+      /* 动画绑定命名后的 timeline */
+      animation-timeline: --box-scroll;
+    }
+
+    @keyframes moveLine {
+      0% {
+        width: 0;
+      }
+
+      100% {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h2>Ciallo</h2>
+  </header>
+  <div class="line"></div>
+  <div class="box">
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+    <p>ciallociallociallociallociallociallociallociallociallociallociallociallo</p>
+  </div>
+</body>
+
+</html>

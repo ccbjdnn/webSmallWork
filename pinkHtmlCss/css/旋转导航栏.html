@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nav</title>
+  <link rel="stylesheet" href="../../img/iconFont1/iconfont.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #ccc;
+    }
+
+    .nav {
+      width: 300px;
+      height: 300px;
+      /* background-color: pink; */
+      margin: 300px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* X顶部图案旋转 */
+    .nav:hover .X.top {
+      transform: rotate(315deg);
+    }
+
+    /* X其他图案旋转移动出现 */
+    .nav:hover .X:not(.top) {
+      /* 先移动，再旋转,!!!最后旋转回正！！！ */
+      transform:
+        rotate(calc(360deg / 8 * var(--num))) translateX(170px) rotate(calc(-360deg / 8 * var(--num)));
+      /* 改变边框颜色 */
+      box-shadow: 0 0 0 3px var(--col);
+    }
+
+    .nav:hover .X:not(.top) span i {
+      color: var(--col);
+    }
+
+    .nav i {
+      font-size: 50px;
+      /* 加粗 */
+      font-weight: bold;
+      color: #fff;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .X {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px #fff;
+      /* 使用 flex 布局实现水平垂直居中 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all .5s ease-in-out calc(var(--num) * 0.1s);
+    }
+
+    .X:hover:not(.top) {
+      background-color: var(--col);
+      box-shadow: 0 0 20px 10px var(--col) !important;
+      cursor: pointer;
+      transition: all 0s;
+    }
+
+    /* 鼠标悬停时，图标颜色变背景颜色 */
+    .X:hover:not(.top) span i {
+      color: #ccc !important;
+      transition: all 0s;
+    }
+
+    /* 导航栏顶，背景色为背景色 */
+    .top {
+      background-color: #ccc;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div style="--num: 0; --col:red;" class="X top">
+      <span><i class="iconfont icon-add"></i></span>
+    </div>
+    <div style="--num: 1; --col:green;" class="X">
+      <span><i class="iconfont icon-ashbin"></i></span>
+    </div>
+    <div style="--num: 2; --col:black;" class="X">
+      <span><i class="iconfont icon-dick"></i></span>
+    </div>
+    <div style="--num: 3; --col:yellow;" class="X">
+      <span><i class="iconfont icon-picture"></i></span>
+    </div>
+    <div style="--num: 4; --col:orange;" class="X">
+      <span><i class="iconfont icon-help"></i></span>
+    </div>
+    <div style="--num: 5; --col:purple;" class="X">
+      <span><i class="iconfont icon-fabulous"></i></span>
+    </div>
+    <div style="--num: 6; --col:gray;" class="X">
+      <span><i class="iconfont icon-film"></i></span>
+    </div>
+    <div style="--num: 7; --col:brown;" class="X">
+      <span><i class="iconfont icon-customer-service"></i></span>
+    </div>
+    <div style="--num: 8; --col:blue;" class="X">
+      <span><i class="iconfont icon-attachment"></i></span>
+    </div>
+  </div>
+</body>
+
+</html>

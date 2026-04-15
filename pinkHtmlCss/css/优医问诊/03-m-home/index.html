@@ -202,21 +202,26 @@
     </div>
   </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <div class="footer">
+    <ul>
+      <li>
+        <img src="./img/index-active.svg" alt="">
+        <p>首页</p>
+      </li>
+      <li>
+        <img src="./img/article-default.svg" alt="">
+        <p>健康百科</p>
+      </li>
+      <li>
+        <img src="./img/notice-default.svg" alt="">
+        <p>消息通知</p>
+      </li>
+      <li>
+        <img src="./img/mine-default.svg" alt="">
+        <p>我的</p>
+      </li>
+    </ul>
+  </div>
 
 
   <script>
@@ -231,6 +236,7 @@
       }
     })
 
+    //其实好像用flex更好
     // 动态控制各组figure的宽度
     const figures = document.querySelectorAll('.tabs-content .imgs')
     // console.log(figures.length)

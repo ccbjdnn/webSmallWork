@@ -91,7 +91,114 @@
       </ul>
       <div class="line"></div>
     </div>
-    <div class="tabs-content">1</div>
+
+    <div class="tabs-content" data-id="0">
+      <div class="con-item">
+        <div class="it-header">
+          <div class="avatar"><img src="../../../../img/小logo.png" alt=""></div>
+          <div class="info">
+            <p class="name">伯爵医生</p>
+            <p class="desc">精神病院 飞机科 主任医师</p>
+          </div>
+          <button> + 关注</button>
+        </div>
+        <div class="it-body">
+          <h3 class="title">炎热夏季如何起飞？</h3>
+          <a href="" class="tags"># 起飞知识</a>
+          <p class="info">炎热的夏季，那大太阳无时不刻在考验着我们的肌肤，过强、过多的阳光中紫外线的…</p>
+          <div class="imgs">
+            <figure><img src="../../../../img/1.jpg" alt=""></figure>
+            <figure><img src="../../../../img/4.png" alt=""></figure>
+            <figure><img src="../../../../img/3.png" alt=""></figure>
+          </div>
+          <p>
+            <span>999 收藏&nbsp;</span>
+            <span>999 评论</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs-content" data-id="1">
+      <div class="con-item">
+        <div class="it-header">
+          <div class="avatar"><img src="../../../../img/小logo.png" alt=""></div>
+          <div class="info">
+            <p class="name">伯爵医生</p>
+            <p class="desc">精神病院 飞机科 主任医师</p>
+          </div>
+          <button> + 关注</button>
+        </div>
+        <div class="it-body">
+          <h3 class="title">炎热夏季如何起飞？</h3>
+          <a href="" class="tags"># 起飞知识</a>
+          <p class="info">炎热的夏季，那大太阳无时不刻在考验着我们的肌肤，过强、过多的阳光中紫外线的…</p>
+          <div class="imgs">
+            <figure><img src="../../../../img/5.png" alt=""></figure>
+            <!-- <figure><img src="../../../../img/6.png" alt=""></figure> -->
+            <figure><img src="../../../../img/7.png" alt=""></figure>
+          </div>
+          <p>
+            <span>999 收藏&nbsp;</span>
+            <span>999 评论</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs-content" data-id="2">
+      <div class="con-item">
+        <div class="it-header">
+          <div class="avatar"><img src="../../../../img/小logo.png" alt=""></div>
+          <div class="info">
+            <p class="name">伯爵医生</p>
+            <p class="desc">精神病院 飞机科 主任医师</p>
+          </div>
+          <button> + 关注</button>
+        </div>
+        <div class="it-body">
+          <h3 class="title">炎热夏季如何起飞？</h3>
+          <a href="" class="tags"># 起飞知识</a>
+          <p class="info">炎热的夏季，那大太阳无时不刻在考验着我们的肌肤，过强、过多的阳光中紫外线的…</p>
+          <div class="imgs">
+            <figure><img src="../../../../img/8.png" alt=""></figure>
+            <!-- <figure><img src="../../../../img/9.png" alt=""></figure> -->
+            <!-- <figure><img src="../../../../img/10.png" alt=""></figure> -->
+          </div>
+          <p>
+            <span>999 收藏&nbsp;</span>
+            <span>999 评论</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs-content" data-id="3">
+      <div class="con-item">
+        <div class="it-header">
+          <div class="avatar"><img src="../../../../img/小logo.png" alt=""></div>
+          <div class="info">
+            <p class="name">伯爵医生</p>
+            <p class="desc">精神病院 飞机科 主任医师</p>
+          </div>
+          <button> + 关注</button>
+        </div>
+        <div class="it-body">
+          <h3 class="title">炎热夏季如何起飞？</h3>
+          <a href="" class="tags"># 起飞知识</a>
+          <p class="info">炎热的夏季，那大太阳无时不刻在考验着我们的肌肤，过强、过多的阳光中紫外线的…</p>
+          <div class="imgs">
+            <figure><img src="../../../../img/1.jpg" alt=""></figure>
+            <figure><img src="../../../../img/4.png" alt=""></figure>
+            <!-- <figure><img src="../../../../img/3.png" alt=""></figure> -->
+          </div>
+          <p>
+            <span>999 收藏&nbsp;</span>
+            <span>999 评论</span>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 
 
@@ -112,6 +219,7 @@
 
 
   <script>
+    // 切换tab
     document.querySelector('.tabs-switch ul').addEventListener('click', function (e) {
       if (e.target.tagName === 'LI') {
         // 初始有active不用判断
@@ -121,6 +229,25 @@
         document.querySelector('.line').style.left = e.target.dataset.index * 14.4 + 4.2667 + 'vw'
       }
     })
+
+    // 动态控制各组figure的宽度
+    const figures = document.querySelectorAll('.tabs-content .imgs')
+    // console.log(figures.length)
+    // console.log(figures[0].children.length)
+    // console.log(figures[0])
+    // console.log(document.querySelector('[data-id="1"] figure'))
+    // console.log(getComputedStyle(document.querySelector('[data-id="1"] figure')).width)
+
+    for (let i = 0; i < figures.length; i++) {
+      switch (figures[i].children.length) {
+        case 1:
+          document.querySelector(`[data-id="${i}"] figure`).style.width = `${28.2667 * 3}vw`
+          break;
+        case 2:
+          document.querySelector(`[data-id="${i}"] figure`).style.width = `${28.2667 * 2}vw`
+      }
+    }
+
   </script>
 </body>
 

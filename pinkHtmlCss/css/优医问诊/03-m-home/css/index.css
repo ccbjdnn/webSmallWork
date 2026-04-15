@@ -113,12 +113,15 @@
 .home-banner {
   height: 120px;
   padding: 10px 15px;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .home-banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 20px;
 }
 
 .home-tabs .tabs-content {
@@ -155,4 +158,104 @@
   height: .5333vw;
   background-color: var(--text-green);
   transition: all .3s ease-in-out;
+}
+
+.home-tabs .tabs-content .con-item {
+  padding: 5.3333vw 0 4vw;
+  border-bottom: .2667vw solid var(--text5);
+}
+
+.home-tabs .tabs-content .con-item .it-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10.6667vw;
+}
+
+.home-tabs .tabs-content .con-item .it-header .avatar {
+  width: 10.6667vw;
+  height: 10.6667vw;
+  border-radius: 50%;
+}
+
+.home-tabs .tabs-content .con-item .it-header .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-tabs .tabs-content .con-item .it-header button {
+  width: 17.6vw;
+  height: 7.2vw;
+  font-size: 2.9333vw;
+  border-radius: 3.6vw;
+  background: transparent;
+  color: var(--text-green);
+  border: .2667vw solid var(--text-green);
+}
+
+.home-tabs .tabs-content .con-item .it-header .info {
+  padding-left: 1.3333vw;
+  flex: 1;
+}
+
+.home-tabs .tabs-content .con-item .it-header .info .name {
+  font-size: 3.7333vw;
+  color: var(--text2);
+  margin-bottom: 1.0667vw;
+}
+
+.home-tabs .tabs-content .con-item .it-header .info .desc {
+  font-size: 3.2vw;
+  color: var(--text5);
+}
+
+.home-tabs .tabs-content .con-item .it-body .title {
+  font-size: 4.2667vw;
+  color: var(--text1);
+  font-weight: 550;
+  padding: 1.8667vw 0;
+}
+
+.home-tabs .tabs-content .con-item .it-body .tags {
+  display: inline-block;
+  color: var(--text-green);
+  font-size: 3.2vw;
+  margin: 1.7333vw 0;
+}
+
+.home-tabs .tabs-content .con-item .it-body .info {
+  font-size: 3.7333vw;
+  color: var(--text6);
+  /* 超出部分省略号 */
+  display: -webkit-box;
+  /* 2行 */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.home-tabs .tabs-content .con-item .it-body .imgs {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.6vw 0 2.6667vw;
+}
+
+.home-tabs .tabs-content .con-item .it-body .imgs figure {
+  margin: 0;
+  width: 28.2667vw;
+  height: 28.2667vw;
+  border-radius: 4vw;
+  overflow: hidden;
+}
+
+.home-tabs .tabs-content .con-item .it-body .imgs figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-tabs .tabs-content .con-item .it-body p span {
+  font-size: 3.2vw;
+  color: var(--text5);
 }

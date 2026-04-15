@@ -129,7 +129,13 @@
 }
 
 .home-tabs .tabs-switch {
-  position: relative;
+  /* 粘性定位固定导航 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 999;
+  position: sticky;
   height: 11.7333vw;
   line-height: 11.7333vw;
 }

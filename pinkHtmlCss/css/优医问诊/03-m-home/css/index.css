@@ -120,3 +120,39 @@
   height: 100%;
   object-fit: cover;
 }
+
+.home-tabs .tabs-content {
+  padding: 0 4vw;
+}
+
+.home-tabs .tabs-switch {
+  position: relative;
+  height: 11.7333vw;
+  line-height: 11.7333vw;
+}
+
+.home-tabs .tabs-switch ul {
+  display: flex;
+}
+
+.home-tabs .tabs-switch ul li {
+  padding: 0 3.4667vw;
+  /* padding-right: 6.6667vw; */
+  color: var(--text4);
+  font-size: 3.7333vw;
+}
+
+.home-tabs .tabs-switch ul li.active {
+  color: var(--text1);
+  font-weight: 600;
+}
+
+.home-tabs .tabs-switch .line {
+  position: absolute;
+  bottom: 0;
+  left: calc(4.2667vw + 14.4vw);
+  width: 5.3333vw;
+  height: .5333vw;
+  background-color: var(--text-green);
+  transition: all .3s ease-in-out;
+}

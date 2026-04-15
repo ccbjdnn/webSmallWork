@@ -78,6 +78,50 @@
   <div class="home-banner">
     <img src="../../../../img/2.jpg" alt="">
   </div>
+
+  <!-- tabs -->
+  <div class="home-tabs">
+    <div class="tabs-switch">
+      <ul>
+        <li data-index="0">关注</li>
+        <li data-index="1" class="active">推荐</li>
+        <li data-index="2">佳作</li>
+        <li data-index="3">剧情</li>
+        <li data-index="4">废萌</li>
+      </ul>
+      <div class="line"></div>
+    </div>
+    <div class="tabs-content">1</div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    document.querySelector('.tabs-switch ul').addEventListener('click', function (e) {
+      if (e.target.tagName === 'LI') {
+        // 初始有active不用判断
+        document.querySelector('.tabs-switch ul li.active').classList.remove('active')
+        e.target.classList.add('active')
+        // 响应式布局
+        document.querySelector('.line').style.left = e.target.dataset.index * 14.4 + 4.2667 + 'vw'
+      }
+    })
+  </script>
 </body>
 
 </html>

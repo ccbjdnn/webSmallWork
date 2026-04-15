@@ -10,20 +10,20 @@
 }
 
 body {
-  padding-bottom: 70.0001px;
+  padding-bottom: 18.6667vw;
 }
 
 .home-header {
-  height: 130.0001px;
+  height: 34.6667vw;
   position: relative;
   /* background-color: var(--text-green); */
-  padding: 30px 15px 0;
+  padding: 8vw 4vw 0;
   margin-bottom: 2.6667vw;
 }
 
 .home-header h1 {
   position: relative;
-  font-size: 24px;
+  font-size: 6.4vw;
   font-weight: 400;
   color: #fff;
 }
@@ -31,22 +31,22 @@ body {
 .home-header .search {
   position: absolute;
   /* 减去内边距 */
-  width: calc(100% - 30px);
+  width: calc(100% - 8vw);
   bottom: 0;
-  font-size: 13.0001px;
-  line-height: 40.0001px;
-  height: 40.0001px;
+  font-size: 3.4667vw;
+  line-height: 10.6667vw;
+  height: 10.6667vw;
   color: var(--text4);
   background-color: #fff;
-  border-radius: 22.0001px;
-  box-shadow: 0 0 10.0001px rgba(0, 0, 0, 0.2);
+  border-radius: 5.8667vw;
+  box-shadow: 0 0 2.6667vw rgba(0, 0, 0, 0.2);
 }
 
 .home-header .search img {
-  margin-left: 21.4001px;
-  margin-right: 2.4px;
-  width: 14.1799px;
-  height: 14.1799px;
+  margin-left: 5.7067vw;
+  margin-right: .64vw;
+  width: 3.7813vw;
+  height: 3.7813vw;
   vertical-align: middle;
 }
 
@@ -57,14 +57,14 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 109.9999px;
+  height: 29.3333vw;
   background: linear-gradient(180deg, #3ECEC5D8 0%, #26BCC6 100%);
-  border-bottom-left-radius: 139.9999px 19.9999px;
-  border-bottom-right-radius: 139.9999px 19.9999px;
+  border-bottom-left-radius: 37.3333vw 5.3333vw;
+  border-bottom-right-radius: 37.3333vw 5.3333vw;
 }
 
 .home-nav {
-  padding: 0 15px;
+  padding: 0 4vw;
 }
 
 .home-nav .row {
@@ -74,44 +74,44 @@ body {
 
 .home-nav .row li {
   flex: 1;
-  width: 115.0001px;
-  height: 109.9999px;
-  margin: 4.9999px 0;
+  width: 30.6667vw;
+  height: 29.3333vw;
+  margin: 1.3333vw 0;
 }
 
 .home-nav .row2 li {
   flex: 1;
-  width: 52.0001px;
-  height: 55.0001px;
-  margin: 4.9999px 0;
+  width: 13.8667vw;
+  height: 14.6667vw;
+  margin: 1.3333vw 0;
 }
 
 
 .home-nav .row li img {
-  width: 46.0001px;
-  height: 46.0001px;
+  width: 12.2667vw;
+  height: 12.2667vw;
 }
 
 .home-nav .row li h3 {
-  font-size: 13.9999px;
+  font-size: 3.7333vw;
   font-weight: 500;
   color: var(--text1);
-  margin: 1.9999px 0;
+  margin: .5333vw 0;
 }
 
 .home-nav .row li p {
-  font-size: 10.9999px;
+  font-size: 2.9333vw;
   color: var(--text3);
 }
 
 .home-nav .row2 li img {
-  width: 31.0001px;
-  height: 31.0001px;
+  width: 8.2667vw;
+  height: 8.2667vw;
 }
 
 .home-nav .row2 li p {
   color: var(--text2);
-  font-size: 13.0001px;
+  font-size: 3.4667vw;
 }
 
 .home-banner {
@@ -129,7 +129,7 @@ body {
 }
 
 .home-tabs .tabs-content {
-  padding: 0 15px;
+  padding: 0 4vw;
 }
 
 .home-tabs .tabs-switch {
@@ -140,8 +140,8 @@ body {
   background: transparent;
   z-index: 999;
   position: sticky;
-  height: 43.9999px;
-  line-height: 43.9999px;
+  height: 11.7333vw;
+  line-height: 11.7333vw;
   backdrop-filter: blur(.8vw);
 }
 
@@ -150,10 +150,10 @@ body {
 }
 
 .home-tabs .tabs-switch ul li {
-  padding: 0 13.0001px;
-  /* padding-right: 25.0001px; */
+  padding: 0 3.4667vw;
+  /* padding-right: 6.6667vw; */
   color: var(--text4);
-  font-size: 13.9999px;
+  font-size: 3.7333vw;
 }
 
 .home-tabs .tabs-switch ul li.active {
@@ -164,28 +164,28 @@ body {
 .home-tabs .tabs-switch .line {
   position: absolute;
   bottom: 0;
-  left: calc(16.0001px + 54px);
-  width: 19.9999px;
-  height: 1.9999px;
+  left: calc(4.2667vw + 14.4vw);
+  width: 5.3333vw;
+  height: .5333vw;
   background-color: var(--text-green);
   transition: all .3s ease-in-out;
 }
 
 .home-tabs .tabs-content .con-item {
-  padding: 19.9999px 0 15px;
-  border-bottom: 1.0001px solid var(--text5);
+  padding: 5.3333vw 0 4vw;
+  border-bottom: .2667vw solid var(--text5);
 }
 
 .home-tabs .tabs-content .con-item .it-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 40.0001px;
+  height: 10.6667vw;
 }
 
 .home-tabs .tabs-content .con-item .it-header .avatar {
-  width: 40.0001px;
-  height: 40.0001px;
+  width: 10.6667vw;
+  height: 10.6667vw;
   border-radius: 50%;
 }
 
@@ -196,47 +196,47 @@ body {
 }
 
 .home-tabs .tabs-content .con-item .it-header button {
-  width: 66px;
-  height: 27px;
-  font-size: 10.9999px;
-  border-radius: 13.5px;
+  width: 17.6vw;
+  height: 7.2vw;
+  font-size: 2.9333vw;
+  border-radius: 3.6vw;
   background: transparent;
   color: var(--text-green);
-  border: 1.0001px solid var(--text-green);
+  border: .2667vw solid var(--text-green);
 }
 
 .home-tabs .tabs-content .con-item .it-header .info {
-  padding-left: 4.9999px;
+  padding-left: 1.3333vw;
   flex: 1;
 }
 
 .home-tabs .tabs-content .con-item .it-header .info .name {
-  font-size: 13.9999px;
+  font-size: 3.7333vw;
   color: var(--text2);
-  margin-bottom: 4.0001px;
+  margin-bottom: 1.0667vw;
 }
 
 .home-tabs .tabs-content .con-item .it-header .info .desc {
-  font-size: 12px;
+  font-size: 3.2vw;
   color: var(--text5);
 }
 
 .home-tabs .tabs-content .con-item .it-body .title {
-  font-size: 16.0001px;
+  font-size: 4.2667vw;
   color: var(--text1);
   font-weight: 550;
-  padding: 7.0001px 0;
+  padding: 1.8667vw 0;
 }
 
 .home-tabs .tabs-content .con-item .it-body .tags {
   display: inline-block;
   color: var(--text-green);
-  font-size: 12px;
-  margin: 6.4999px 0;
+  font-size: 3.2vw;
+  margin: 1.7333vw 0;
 }
 
 .home-tabs .tabs-content .con-item .it-body .info {
-  font-size: 13.9999px;
+  font-size: 3.7333vw;
   color: var(--text6);
   /* 超出部分省略号 */
   display: -webkit-box;
@@ -249,14 +249,14 @@ body {
 .home-tabs .tabs-content .con-item .it-body .imgs {
   display: flex;
   justify-content: space-between;
-  margin: 6px 0 10.0001px;
+  margin: 1.6vw 0 2.6667vw;
 }
 
 .home-tabs .tabs-content .con-item .it-body .imgs figure {
   margin: 0;
-  width: 106.0001px;
-  height: 106.0001px;
-  border-radius: 15px;
+  width: 28.2667vw;
+  height: 28.2667vw;
+  border-radius: 4vw;
   overflow: hidden;
 }
 
@@ -267,7 +267,7 @@ body {
 }
 
 .home-tabs .tabs-content .con-item .it-body p span {
-  font-size: 12px;
+  font-size: 3.2vw;
   color: var(--text5);
 }
 

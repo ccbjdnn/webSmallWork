@@ -75,6 +75,13 @@
   margin: 1.3333vw 0;
 }
 
+.home-nav .row2 li {
+  flex: 1;
+  width: 13.8667vw;
+  height: 14.6667vw;
+  margin: 1.3333vw 0;
+}
+
 
 .home-nav .row li img {
   width: 12.2667vw;
@@ -101,4 +108,15 @@
 .home-nav .row2 li p {
   color: var(--text2);
   font-size: 3.4667vw;
+}
+
+.home-banner {
+  height: 120px;
+  padding: 10px 15px;
+}
+
+.home-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

@@ -1,0 +1,59 @@
+/* 全局颜色变量 */
+:root {
+  --text1: #121826;
+  --text2: #3C3E42;
+  --text3: #848484;
+  --text4: #979797;
+  --text5: #C3C3C5;
+  --text6: #6F6F6F;
+  --text-green: #2CB5A5;
+}
+
+.home-header {
+  height: 34.6667vw;
+  position: relative;
+  /* background-color: var(--text-green); */
+  padding: 8vw 4vw 0;
+}
+
+.home-header h1 {
+  position: relative;
+  font-size: 6.4vw;
+  font-weight: 400;
+  color: #fff;
+}
+
+.home-header .search {
+  position: absolute;
+  /* 减去内边距 */
+  width: calc(100% - 8vw);
+  bottom: 0;
+  font-size: 3.4667vw;
+  line-height: 10.6667vw;
+  height: 10.6667vw;
+  color: var(--text4);
+  background-color: #fff;
+  border-radius: 5.8667vw;
+  box-shadow: 0 0 2.6667vw rgba(0, 0, 0, 0.2);
+}
+
+.home-header .search img {
+  margin-left: 5.7067vw;
+  margin-right: .64vw;
+  width: 3.7813vw;
+  height: 3.7813vw;
+  vertical-align: middle;
+}
+
+
+.home-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 29.3333vw;
+  background: linear-gradient(180deg, #3ECEC5D8 0%, #26BCC6 100%);
+  border-bottom-left-radius: 37.3333vw 5.3333vw;
+  border-bottom-right-radius: 37.3333vw 5.3333vw;
+}

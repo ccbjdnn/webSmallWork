@@ -4,6 +4,10 @@ body {
   background: rgb(242, 246, 255);
 }
 
+li {
+  list-style: none;
+}
+
 article,
 aside,
 details,

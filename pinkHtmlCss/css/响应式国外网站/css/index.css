@@ -18,12 +18,13 @@
 .w {
   max-width: 1234px;
   margin: 0 auto;
+  padding: 0 30px;
 }
 
 .herder {
   display: flex;
   justify-content: space-between;
-  padding: 60px 30px 0;
+  padding-top: 60px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -125,5 +126,111 @@
 
   .herder {
     padding-top: 25px;
+  }
+}
+
+.course {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 380px auto;
+  grid-gap: 80px;
+  align-items: end;
+}
+
+.course .c-left p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.course .c-left-p1 {
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 600;
+}
+
+.course .c-left-p2 {
+  font-size: 17px;
+  line-height: 130%;
+}
+
+
+.course .c-left h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  margin: 20px 0;
+}
+
+.course .c-right {
+  margin-bottom: 20px;
+}
+
+.c-right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.c-right .icon ul {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 24px;
+}
+
+.c-right .icon li img {
+  height: 44px;
+  width: 44px;
+}
+
+.search {
+  position: relative;
+}
+
+.search input {
+  padding-left: 42px;
+  border: 0;
+  outline: 0;
+  width: 204px;
+  height: 44px;
+  border-radius: 30px;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 20px 40px, rgba(255, 255, 255, 0.3) 0px 0px 0px 0.5px inset;
+  background: linear-gradient(rgba(99, 106, 150, 0.4) 0%, rgba(182, 186, 214, 0.25) 100%);
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.search input:focus {
+  box-shadow: rgba(47, 184, 255, 0.3) 0px 10px 40px, rgb(47, 184, 255) 0px 0px 0px 1px inset;
+  background: linear-gradient(rgba(24, 32, 79, 0.4) 0%, rgba(24, 32, 79, 0.25) 100%);
+}
+
+.search img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+@media (max-width:1280px) {
+  .course {
+    grid-template-columns: 1fr;
+  }
+
+  .c-left {
+    max-width: 380px;
+  }
+}
+
+@media (max-width:1034px) {
+  .c-left {
+    max-width: 380px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+@media (max-width:700px) {
+  .c-right {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    justify-items: center;
   }
 }

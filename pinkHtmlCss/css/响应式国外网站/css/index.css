@@ -262,6 +262,26 @@
   object-fit: cover;
 }
 
+.course-card .item img[data-id='1'] {
+  object-position: 40% 0;
+}
+
+.course-card .item img[data-id='2'] {
+  object-position: 70% 0;
+}
+
+.course-card .item img[data-id='5'] {
+  object-position: 80% 0;
+}
+
+.course-card .item img[data-id='7'] {
+  object-position: 30% 0;
+}
+
+.course-card .item img[data-id='8'] {
+  object-position: 70% 0;
+}
+
 @media (max-width:768px) {
   .course-card {
     gap: 20px;

@@ -1,0 +1,68 @@
+.topbar {
+  height: 42px;
+  line-height: 42px;
+  background-color: #000;
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+}
+
+.bg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 1200px;
+  background: linear-gradient(189.16deg, rgb(57, 15, 199) 13.57%, rgb(40, 35, 77) 98.38%);
+}
+
+.w {
+  width: 1234px;
+  margin: 0 auto;
+}
+
+.herder {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 30px 0;
+}
+
+.herder .logo img {
+  height: 44px;
+  width: 44px;
+  margin: 0;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  grid-gap: 26px;
+}
+
+
+
+.nav a button {
+  display: flex;
+  padding: 10px 20px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  border-radius: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav a button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: rgba(31, 47, 71, 0.25) 0px 20px 40px, rgba(0, 0, 0, 0.1) 0px 1px 5px, rgba(255, 255, 255, 0.4) 0px 0px 0px 0.5px inset;
+  transform: translateY(-1px);
+}
+
+.nav a button img {
+  height: 24px;
+  width: 24px;
+  margin-right: 10px;
+}
+
+.nav a button p {
+  font-size: 15px;
+  color: #fff;
+}

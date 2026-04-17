@@ -164,3 +164,41 @@
      transform: translateY(10);
    }
  }
+
+ .future-tech {
+   position: relative;
+   background: url('../img/bg1.avif');
+   background-size: cover;
+   background-attachment: fixed;
+   background-position: center;
+ }
+
+ .future-tech::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(18, 18, 18, 0.8);
+   backdrop-filter: blur(1px);
+ }
+
+ .future-tech .row i {
+   display: block;
+   font-size: 3rem;
+   color: var(--vivo-cyan);
+   text-shadow: var(--neon-glow);
+   margin-bottom: 15px;
+ }
+
+ .future-tech .row h3 {
+   color: #fff;
+   font-size: 1.5rem;
+   font-weight: 600;
+   margin-bottom: 15px;
+ }
+
+ .future-tech .row p {
+   color: rgba(255, 255, 255, 0.7);
+ }

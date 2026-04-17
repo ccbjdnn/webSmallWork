@@ -15,3 +15,57 @@
    color: #fff;
    overflow-x: hidden;
  }
+
+ .navbar {
+   background-color: rgba(18, 18, 18, .95) !important;
+   backdrop-filter: blur(10px);
+   /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
+   padding: 15px 0;
+ }
+
+ .icons a {
+   font-size: 1.4rem;
+   color: rgba(255, 255, 255, 0.9);
+ }
+
+ .icons a:hover {
+   color: var(--vivo-cyan);
+   text-shadow: var(--neon-glow);
+ }
+
+ .nav-link {
+   position: relative;
+   color: rgba(255, 255, 255, 0.9) !important;
+   margin: 0 10px;
+ }
+
+ .nav-link::after {
+   content: '';
+   position: absolute;
+   left: 0;
+   bottom: -5px;
+   background: #00e5ff;
+   width: 0%;
+   height: 2px;
+   background: linear-gradient(90deg, var(--vivo-cyan), var(--vivo-blue));
+   transition: all 0.3s ease;
+ }
+
+ .nav-link:hover {
+   text-shadow: var(--neon-glow);
+ }
+
+ .nav-link:hover::after {
+   width: 100%;
+ }
+
+ .navbar-brand,
+ .navbar-brand:hover {
+   font-size: 28px;
+   font-weight: 700;
+   background: linear-gradient(45deg, var(--vivo-cyan), var(--vivo-blue));
+   /* 文字裁剪 */
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   text-shadow: var(--neon-glow);
+ }

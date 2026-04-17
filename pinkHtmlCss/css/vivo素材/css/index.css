@@ -92,10 +92,6 @@
    color: var(--vivo-cyan);
  }
 
- body {
-   height: 3000px;
- }
-
  .hot-product .info {
    color: rgba(255, 255, 255, 0.7);
  }
@@ -200,5 +196,93 @@
  }
 
  .future-tech .row p {
+   color: rgba(255, 255, 255, 0.7);
+ }
+
+ .footer {
+   padding-top: 80px;
+   background-color: #0a0a0a;
+ }
+
+ .footer dt {
+   position: relative;
+   font-size: 1.2rem;
+   font-weight: 600;
+   padding-bottom: 10px;
+   margin-bottom: 15px;
+ }
+
+ .footer dt::after {
+   content: '';
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 40px;
+   height: 2px;
+   background: linear-gradient(90deg, var(--vivo-cyan), var(--vivo-blue));
+ }
+
+ .footer dd>a {
+   display: block;
+   color: rgba(255, 255, 255, 0.7);
+   text-decoration: none;
+   margin-bottom: 20px;
+   transition: all 0.3s ease;
+ }
+
+ .footer dd>a:hover {
+   text-shadow: var(--neon-glow);
+   transform: translateX(10px);
+   color: var(--vivo-cyan);
+ }
+
+ .footer .icons {
+   display: flex;
+   gap: 15px;
+ }
+
+ .footer .icons a {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   background-color: rgba(255, 255, 255, 0.1);
+   text-decoration: none;
+   text-align: center;
+   line-height: 40px;
+   transition: all 0.3s ease;
+ }
+
+ .footer .icons a:hover {
+   color: #fff;
+   box-shadow: var(--neon-glow);
+   transform: translateY(-3px);
+   background: linear-gradient(45deg, var(--vivo-blue), var(--vivo-cyan));
+ }
+
+ .footer .news {
+   color: rgba(255, 255, 255, 0.7);
+ }
+
+ .footer .form-control::placeholder {
+   color: rgba(255, 255, 255, 0.7);
+ }
+
+ .btn-outline-secondary {
+   background: linear-gradient(45deg, var(--vivo-blue), var(--vivo-cyan));
+   color: #fff;
+   border: 0;
+   border-radius: 30px;
+   font-weight: 500;
+   transition: all 0.3s ease;
+ }
+
+ .btn-outline-secondary:hover {
+   background: linear-gradient(45deg, var(--vivo-cyan), var(--vivo-blue));
+   color: #000;
+   box-shadow: var(--neon-glow);
+ }
+
+ .copyright {
+   border-top: 1px solid rgba(255, 255, 255, 0.1);
    color: rgba(255, 255, 255, 0.7);
  }

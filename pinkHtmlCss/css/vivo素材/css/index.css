@@ -286,3 +286,21 @@
    border-top: 1px solid rgba(255, 255, 255, 0.1);
    color: rgba(255, 255, 255, 0.7);
  }
+
+ @media (max-width: 992px) {
+   .navbar {
+     padding: 5px 0;
+   }
+
+   .carousel-caption {
+     bottom: 7rem;
+   }
+
+   .carousel-indicators {
+     margin-bottom: 2rem;
+   }
+
+   .banner {
+     margin-top: 60px;
+   }
+ }

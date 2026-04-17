@@ -95,3 +95,72 @@
  body {
    height: 3000px;
  }
+
+ .hot-product .info {
+   color: rgba(255, 255, 255, 0.7);
+ }
+
+ .card {
+   background-color: var(--vivo-card-bg);
+   border-radius: 15px;
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   transition: all 0.3s ease;
+   overflow: hidden;
+ }
+
+ .card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+ }
+
+ .card .card-img {
+   padding: 30px;
+   background-color: #292929;
+   animation: move 5s ease-in-out infinite;
+ }
+
+ .card-title {
+   font-size: 1.4rem;
+   font-weight: 600;
+   color: #fff;
+ }
+
+ .card-text {
+   font-size: .9rem;
+   color: rgba(255, 255, 255, 0.7);
+ }
+
+ .price {
+   font-size: 1.5rem;
+   font-weight: 600;
+   color: var(--vivo-cyan);
+ }
+
+ .card-body .btn {
+   width: 100%;
+   border-radius: 30px;
+   color: var(--vivo-cyan);
+   border: 2px solid var(--vivo-cyan);
+   background: transparent;
+ }
+
+ .card-body .btn:hover {
+   background: var(--vivo-cyan);
+   color: #000;
+   border-color: var(--vivo-cyan);
+   text-shadow: var(--neon-glow);
+ }
+
+ @keyframes move {
+   0% {
+     transform: translateY(0);
+   }
+
+   50% {
+     transform: translateY(-10px);
+   }
+
+   100% {
+     transform: translateY(10);
+   }
+ }

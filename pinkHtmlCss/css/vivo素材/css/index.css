@@ -304,3 +304,26 @@
      margin-top: 60px;
    }
  }
+
+ /* 自定义滚动条样式 */
+ /* 滚动条设置宽度和高度 */
+ /* 滚动条设置宽度和高度 */
+ ::-webkit-scrollbar {
+   width: 7px;
+ }
+
+ /* 设置轨道背景色, 圆角等 */
+ ::-webkit-scrollbar-track {
+   background: var(--vivo-dark);
+ }
+
+ /* 设置滑块样式 */
+ ::-webkit-scrollbar-thumb {
+   background: linear-gradient(var(--vivo-blue), var(--vivo-cyan));
+   border-radius: 10px;
+ }
+
+ /* 鼠标经过滑块 */
+ ::-webkit-scrollbar-thumb:hover {
+   background: linear-gradient(var(--vivo-cyan), var(--vivo-blue));
+ }

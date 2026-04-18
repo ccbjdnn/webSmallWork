@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css布局</title>
+  <style>
+    body,
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .box {
+      width: 1000px;
+      /* height: 1500px; */
+      /* border: 2px solid red; */
+      margin: 40px auto 40px;
+    }
+
+    /* .column2 {
+      border: 2px solid greenyellow;
+    } */
+
+    .column2 .column2-1 {
+      width: 700px;
+      height: 300px;
+      background-color: aqua;
+      float: left;
+    }
+
+    .column2 .column2-2 {
+      width: 280px;
+      height: 300px;
+      background-color: blue;
+      float: right;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    .column3 {
+      /* border: 2px solid darkorange; */
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .column3 .column3-1 {
+      width: 300px;
+      height: 300px;
+      background-color: blueviolet;
+      float: left;
+    }
+
+    .column3 .column3-2 {
+      width: 450px;
+      height: 300px;
+      background-color: deeppink;
+      float: left;
+      margin: 0px 18px;
+    }
+
+    .column3 .column3-3 {
+      width: 210px;
+      height: 300px;
+      background-color: darkblue;
+      float: right;
+    }
+
+    .clearFix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    /* .column-n {
+      border: 2px solid chartreuse;
+    } */
+
+    /* .column-n ul {
+      background-color: aquamarine;
+    } */
+
+    .column-n ul li {
+      width: 190px;
+      height: 200px;
+      float: left;
+      margin: 4px;
+      background-color: darkorange;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="column2">
+      <div class="column2-1"></div>
+      <div class="column2-2"></div>
+      <div class="clear"></div>
+    </div>
+    <div class="column3 clearFix">
+      <div class="column3-1"></div>
+      <div class="column3-2"></div>
+      <div class="column3-3"></div>
+    </div>
+    <div class="column-n">
+      <ul class="clearFix">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 60px;
+      height: 60px;
+      background: #35D1E6;
+      position: relative;
+      animation: move 2s infinite alternate;
+    }
+
+    /* 左右移动 */
+    @keyframes move {
+      from {
+        left: 0;
+      }
+
+      to {
+        left: 200px;
+      }
+    }
+
+    .circle {
+      width: 80px;
+      height: 80px;
+      background: #ff6b6b;
+      border-radius: 50%;
+      animation: breathe 2s infinite ease-in-out;
+    }
+
+    /* 呼吸效果（opacity变化） */
+    @keyframes breathe {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* 裁剪成圆形 */
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 6px solid #ddd;
+      border-top: 6px solid #35D1E6;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    /* 旋转加载效果 */
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .ball {
+      width: 50px;
+      height: 50px;
+      background: orange;
+      border-radius: 50%;
+      animation: bounce 1s infinite;
+    }
+
+    /* 弹跳效果 */
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-100px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .bg {
+      width: 200px;
+      height: 100px;
+      background: linear-gradient(90deg, #ff6b6b, #35D1E6, #6bff95);
+      background-size: 300% 100%;
+      animation: flow 3s infinite linear;
+    }
+
+    /* 背景变换实现流动效果 */
+    @keyframes flow {
+      0% {
+        background-position: 0%;
+      }
+
+      100% {
+        background-position: 100%;
+      }
+    }
+
+    .typing {
+      width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      /* 光标效果 */
+      border-right: 2px solid;
+      /* 帧实现 */
+      animation: typing 3s steps(20) infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <div class="circle"></div>
+  <div class="loader"></div>
+  <div class="ball"></div>
+  <div class="bg"></div>
+  <div class="typing">Hello CSS Animation</div>
+</body>
+
+</html>

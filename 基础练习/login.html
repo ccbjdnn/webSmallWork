@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(-45deg,
+          #ff0080,
+          #7928ca,
+          #2afadf,
+          #ffcd1e);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .box {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      text-align: center;
+      background: transparent;
+      background-color: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(40px);
+      width: 300px;
+      padding: 40px;
+      transition: all 0.3s ease .6s;
+    }
+
+    /* 标题字体 */
+    .box::before {
+      content: 'Login';
+      font-size: 24px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .box::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #ff0080, #7928ca, #2afadf, #ffcd1e);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+      z-index: -1;
+    }
+
+    .box:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+      transform: matrix(1.05, 0, 0, 1.05, 0, 0);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      transition-delay: 0s;
+    }
+
+    input {
+      border: 1px solid #ccc;
+      outline: 0;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.5);
+      transition: all 0.3s ease .6s;
+    }
+
+    input:hover::placeholder {
+      color: #fff;
+      transition-delay: 0s;
+    }
+
+    input:hover {
+      border: 1px solid #35D1E6;
+      transition-delay: 0s;
+    }
+
+    input::placeholder {
+      transition: all 0.3s ease .6s;
+      color: #ccc;
+    }
+
+    button {
+      border: 0;
+      outline: 0;
+      padding: 10px;
+      background: #35D1E6;
+      width: 150px;
+      border-radius: 25px;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: all 0.3s ease .6s;
+    }
+
+    button:hover {
+      background: #fff;
+      color: #35D1E6;
+      transition-delay: 0s;
+    }
+
+    /* 左右移动 */
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="loginText"><input type="text" placeholder="用户名"></div>
+    <div class="loginPassword"><input type="password" placeholder="密码"></div>
+    <div class="login"><button>登录</button></div>
+  </div>
+</body>
+
+</html>

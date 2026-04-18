@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 这里是ion-icon的script引入文件 -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <title>Document</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9rem;
+      background-color: #333;
+    }
+
+    .pulse ion-icon {
+      font-size: 35px;
+      position: absolute;
+      padding: 7px;
+    }
+
+    .pulse {
+      width: 3rem;
+      color: #fff;
+      transition: all .5s ease;
+      background: #35D1E6
+    }
+
+    .pulse,
+    .pulse::before,
+    .pulse::after {
+      content: '';
+      display: grid;
+      grid-area: 1/1;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 #35D1E633;
+      animation: pulsing 3s linear infinite var(--s, 0s);
+    }
+
+    .pulse::before {
+      --s: 1s
+    }
+
+    .pulse::after {
+      --s: 2s
+    }
+
+    .pulse:hover {
+      background: #35D1E633;
+      color: #ffffff99;
+    }
+
+    @keyframes pulsing {
+      to {
+        box-shadow: 0 0 0 6rem #0000;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#" class="pulse"><ion-icon name="finger-print-outline"></ion-icon></a>
+  <a href="#" class="pulse" style="filter: hue-rotate(120deg);"><ion-icon name="radio-outline"></ion-icon></a>
+  <a href="#" class="pulse" style="filter: grayscale();"><ion-icon name="sad-outline"></ion-icon></a>
+</body>
+
+</html>

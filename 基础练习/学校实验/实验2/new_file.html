@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 容器样式，使用 Flexbox 让内部元素水平和垂直居中 */
+			.container {
+			    display: flex;
+			    justify-content: center; /* 水平居中 */
+			    align-items: center; /* 垂直居中 */
+			    height: 100vh; /* 让容器高度占满整个视口高度 */
+			}
+			/* 三角形样式 */
+			.triangle {
+			    width: 0;
+			    height: 0;
+			    /* 构建红色三角形，这里是一个倒三角形，边框设置来形成三角形 */
+			    border-left: 100px solid transparent;
+			    border-right: 100px solid transparent;
+			    border-top: 100px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+		        <div class="triangle"></div>
+		    </div>
+	</body>
+</html>

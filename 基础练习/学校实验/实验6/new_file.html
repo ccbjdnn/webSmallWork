@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>制作进度条</title>
+  <style>
+    .progress-container {
+      width: 500px;
+      height: 40px;
+      border: 2px solid red;
+      margin: 20px 0;
+      overflow: hidden;
+    }
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background-color: magenta;
+      color: #fff;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    button {
+      padding: 5px 15px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar">0%</div>
+  </div>
+  <button id="installBtn">安装</button>
+
+  <script>
+    const progressBar = document.getElementById('progressBar');
+    const installBtn = document.getElementById('installBtn');
+    let progress = 0;
+
+    installBtn.addEventListener('click', function() {
+      const timer = setInterval(function() {
+        progress++;
+        if (progress > 100) {
+          clearInterval(timer);
+          alert('安装完成！');
+          return;
+        }
+        progressBar.style.width = progress + '%';
+        progressBar.textContent = progress + '%';
+      }, 50);
+    });
+  </script>
+</body>
+</html>

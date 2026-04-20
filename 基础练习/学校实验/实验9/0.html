@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>随机点名</title>
+  <!-- 引入Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .btn-style {
+        @apply border border-gray-300 px-6 py-2 rounded hover:bg-gray-100 transition-colors duration-200;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+  <!-- 点名容器 -->
+  <div class="bg-white w-full max-w-md rounded-lg p-8 shadow-md">
+    <!-- 标题 -->
+    <h2 class="text-2xl font-bold text-center mb-8">随机点名</h2>
+    
+    <!-- 名字显示区域 -->
+    <div class="text-xl mb-10">
+      <span>名字是：</span>
+      <span id="nameDisplay" class="text-red-500 font-bold">等待点名</span>
+    </div>
+    
+    <!-- 按钮区域 -->
+    <div class="flex flex-col items-center gap-4">
+      <div class="flex gap-6">
+        <button id="startBtn" class="btn-style">开始</button>
+        <button id="endBtn" class="btn-style">结束</button>
+      </div>
+      <button id="resetBtn" class="btn-style">重置</button>
+    </div>
+  </div>
+
+  <script>
+    // 1. 点名名单
+    const nameList = [
+      "张三", "李四", "王五", "赵六", "孙七",
+      "周八", "吴九", "郑十", "天选之人"
+    ];
+    
+    // 2. 获取DOM元素
+    const nameDisplay = document.getElementById('nameDisplay');
+    const startBtn = document.getElementById('startBtn');
+    const endBtn = document.getElementById('endBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    
+    // 3. 状态变量
+    let rollTimer = null; // 定时器标识
+    let isRolling = false; // 是否正在滚动
+
+    // 4. 随机选名字的函数
+    function getRandomName() {
+      const randomIndex = Math.floor(Math.random() * nameList.length);
+      return nameList[randomIndex];
+    }
+
+    // 5. 开始点名：启动定时器，持续切换名字
+    startBtn.addEventListener('click', () => {
+      if (isRolling) return; // 防止重复点击
+      
+      isRolling = true;
+      // 每隔50毫秒切换一次名字
+      rollTimer = setInterval(() => {
+        nameDisplay.textContent = getRandomName();
+      }, 50);
+    });
+
+    // 6. 结束点名：清除定时器，停止滚动
+    endBtn.addEventListener('click', () => {
+      if (!isRolling) return;
+      
+      clearInterval(rollTimer);
+      isRolling = false;
+    });
+
+    // 7. 重置：停止滚动，恢复初始文字
+    resetBtn.addEventListener('click', () => {
+      clearInterval(rollTimer);
+      isRolling = false;
+      nameDisplay.textContent = "等待点名";
+    });
+  </script>
+</body>
+</html>

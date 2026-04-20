@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多颜色区块布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* 盒模型计算方式：width包含边框和内边距 */
+        }
+        
+        body {
+            padding: 15px;
+            background-color: #fff;
+        }
+        
+        /* 顶部区域样式 */
+        .top-area {
+            overflow: hidden; /* 清除浮动影响 */
+            margin-bottom: 15px;
+        }
+        
+        .pink-block {
+            width: 25%;
+            height: 100px;
+            background-color: #ffccd5;
+            float: left;
+            margin-right: 15px;
+        }
+        
+        .lightblue-block {
+            width: 15%;
+            height: 50px;
+            background-color: #b3d9e5;
+            float: right;
+        }
+        
+        .purple-block {
+            height: 70px;
+            background-color: #6a0dad;
+            margin-left: calc(25% + 30px); /* 左侧粉色块宽度 + 双倍间距 */
+            margin-right: calc(15% + 30px); /* 右侧浅蓝色块宽度 + 双倍间距 */
+            margin-top: 15px;
+        }
+        
+        /* 中间区域样式 */
+        .middle-area {
+            overflow: hidden; /* 清除浮动影响 */
+            margin-bottom: 15px;
+        }
+        
+        .yellow-block {
+            width: 30%;
+            height: 400px;
+            background-color: #ffff66;
+            float: left;
+            margin-right: 15px;
+        }
+        
+        .right-column {
+            width: calc(70% - 15px); /* 剩余宽度减去间距 */
+            float: right;
+            position: relative;
+        }
+        
+        .green-block {
+            width: 40%;
+            height: 360px; /* 覆盖蓝色、红色和棕色块的总高度 */
+            background-color: #008000;
+            float: right;
+            margin-left: 15px;
+        }
+        
+        .blue-block {
+            width: calc(60% - 15px); /* 扣除绿色块和间距的宽度 */
+            height: 200px;
+            background-color: #00ccff;
+            margin-bottom: 15px;
+        }
+        
+        .red-block {
+            width: calc(60% - 15px);
+            height: 110px;
+            background-color: #ff6666;
+            margin-bottom: 15px;
+        }
+        
+        .brown-block {
+            width: calc(60% - 15px);
+            height: 30px;
+            background-color: #a67c52;
+        }
+        
+        /* 底部区域样式 */
+        .bottom-area {
+            clear: both; /* 清除前面的浮动 */
+        }
+        
+        .orange-block {
+            width: 100%;
+            height: 50px;
+            background-color: #ff9966;
+        }
+		.all_block{
+			width: 1000px;
+			height: 4000px;
+		}
+    </style>
+</head>
+<body>
+	<div class="all_block">
+    <!-- 顶部区域 -->
+    <div class="top-area">
+        <div class="pink-block"></div>
+        <div class="lightblue-block"></div>
+        <div class="purple-block"></div>
+    </div>
+    
+    <!-- 中间区域 -->
+    <div class="middle-area">
+        <div class="yellow-block"></div>
+        <div class="right-column">
+            <div class="green-block"></div>
+            <div class="blue-block"></div>
+            <div class="red-block"></div>
+            <div class="brown-block"></div>
+        </div>
+    </div>
+    
+    <!-- 底部区域 -->
+    <div class="bottom-area">
+        <div class="orange-block"></div>
+    </div>
+	</div>
+</body>
+</html>

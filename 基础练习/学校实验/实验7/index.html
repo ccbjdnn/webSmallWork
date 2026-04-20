@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>移动的图片盒</title>
+    <style>
+        #container {
+            width: 500px;
+            height: 400px;
+            border: 1px solid #ccc;
+            position: relative;
+            margin: 20px 0;
+        }
+        #box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 图片自动适应盒子 */
+            object-fit: cover; /* 覆盖盒子，裁剪超出部分 */
+            border-radius: 4px; /* 圆角美化 */
+        }
+        
+        button {
+            padding: 8px 16px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h3>移动的图片盒</h3>
+    <div id="container">
+        <img id="box" src="img/1.jpg">
+    </div>
+    <button id="startBtn">点击开始</button>
+    <button id="stopBtn">点击停止</button>
+
+    <script>
+        // 获取图片元素（ID不变，逻辑无需修改）
+        const box = document.getElementById('box');
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const container = document.getElementById('container');
+        
+        // 移动参数（不变）
+        let x = 0;          
+        let y = 0;          
+        let speedX = 2;     
+        let speedY = 2;     
+        let timer = null;   
+        
+        // 开始移动函数（不变）
+        function startMoving() {
+            if (timer) clearInterval(timer);
+            
+            timer = setInterval(() => {
+                const containerWidth = container.clientWidth;
+                const containerHeight = container.clientHeight;
+                const boxWidth = box.offsetWidth;
+                const boxHeight = box.offsetHeight;
+                
+                x += speedX;
+                y += speedY;
+                
+                if (x + boxWidth >= containerWidth || x <= 0) speedX = -speedX;
+                if (y + boxHeight >= containerHeight || y <= 0) speedY = -speedY;
+                
+                x = Math.max(0, Math.min(x, containerWidth - boxWidth));
+                y = Math.max(0, Math.min(y, containerHeight - boxHeight));
+                
+                box.style.left = x + 'px';
+                box.style.top = y + 'px';
+            }, 20);
+        }
+        
+        // 停止移动函数（不变）
+        function stopMoving() {
+            if (timer) {
+                clearInterval(timer);
+                timer = null;
+            }
+        }
+        
+        // 绑定事件（不变）
+        startBtn.addEventListener('click', startMoving);
+        stopBtn.addEventListener('click', stopMoving);
+    </script>
+</body>
+</html>

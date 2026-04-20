@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基础CSS盒子布局</title>
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* 页面主体样式 */
+        body {
+            background-color: white;
+            min-height: 100vh; /* 确保占满整个屏幕高度 */
+            display: flex;
+            align-items: center; /* 垂直居中 */
+            justify-content: center; /* 水平居中 */
+            padding: 16px; /* 内边距 */
+        }
+        
+        /* 外部容器样式 */
+        .outer-container {
+            border: 2px solid #a0a0a0; /* 灰色边框 */
+            padding: 12px; /* 内边距 */
+        }
+        
+        /* 内部盒子容器 */
+        .inner-container {
+            display: flex;
+            gap: 12px; /* 盒子之间的间距 */
+        }
+        
+        /* 红色盒子样式 */
+        .red-box {
+            width: 64px; /* 宽度 */
+            height: 64px; /* 高度 */
+            background-color: #dc2626; /* 红色背景 */
+            display: flex;
+            align-items: center; /* 文字垂直居中 */
+            justify-content: center; /* 文字水平居中 */
+        }
+        
+        /* 数字样式 */
+        .box-number {
+            color: black; /* 黑色文字 */
+            font-weight: bold; /* 粗体 */
+            font-size: 24px; /* 文字大小 */
+            font-family: Arial, sans-serif; /* 字体 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 外部容器 -->
+    <div class="outer-container">
+        <!-- 内部盒子容器 -->
+        <div class="inner-container">
+            <!-- 第一个红色盒子 -->
+            <div class="red-box">
+                <span class="box-number">11</span>
+            </div>
+            
+            <!-- 第二个红色盒子 -->
+            <div class="red-box">
+                <span class="box-number">22</span>
+            </div>
+            
+            <!-- 第三个红色盒子 -->
+            <div class="red-box">
+                <span class="box-number">33</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>水仙花数展示</title>
+</head>
+<body>
+    <h3>所有水仙花数：</h3>
+    <div id="result"></div>
+
+    <script>
+        try {
+            let narcissisticNumbers = [];
+            
+            // 遍历100到999之间的所有数字
+            for (let i = 100; i <= 999; i++) { // 注意这里修改为 <=999，确保包含999的判断
+                let num = i;
+                let sum = 0;
+                // 分解数字并计算立方和（更通用的写法）
+                while (num > 0) {
+                    let digit = num % 10; // 获取最后一位数字
+                    sum += digit ** 3;    // 计算立方并累加
+                    num = Math.floor(num / 10); // 移除最后一位数字
+                }
+                
+                if (sum === i) {
+                    narcissisticNumbers.push(i);
+                }
+            }
+            
+            // 显示结果
+            document.getElementById('result').textContent = 
+                narcissisticNumbers.length > 0 
+                    ? narcissisticNumbers.join(', ') 
+                    : '未找到水仙花数';
+        } catch (error) {
+            // 捕获并显示错误信息
+            document.getElementById('result').textContent = 
+                '运行出错：' + error.message;
+        }
+    </script>
+</body>
+</html>

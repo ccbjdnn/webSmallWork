@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>员工信息管理</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f5f5f5;
+        }
+		td{
+			background-color: rgba(176, 103, 184, 0.3);
+		}
+        .delete-btn {
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .delete-btn:hover {
+            background-color: #cc0000;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: inline-block;
+            width: 80px;
+        }
+        input {
+            padding: 8px;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .submit-btn {
+            background-color: #00C851;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-left: 84px;
+        }
+        .submit-btn:hover {
+            background-color: #007E33;
+        }
+		body{
+			background: no-repeat center 0 fixed url(img/yzs.jpg);
+			background-size: cover;
+		}
+		.addNewStaff{
+			background-color: rgba(176, 103, 184, 0.4);
+		}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>员工信息表</h2>
+        <!-- 员工表格 -->
+        <table id="employeeTable">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Salary</th>
+                <th>操作</th>
+            </tr>
+            <!-- 初始员工数据 -->
+            <tr>
+                <td>pgz</td>
+                <td>pgz@pgz.com</td>
+                <td>5000</td>
+                <td><button class="delete-btn" onclick="deleteEmployee(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>ljs</td>
+                <td>ljs@ljs.com</td>
+                <td>8000</td>
+                <td><button class="delete-btn" onclick="deleteEmployee(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>lts</td>
+                <td>lts@lts.com</td>
+                <td>10000</td>
+                <td><button class="delete-btn" onclick="deleteEmployee(this)">Delete</button></td>
+            </tr>
+        </table>
+
+        <!-- 添加员工表单 -->
+		<div class="addNewStaff">
+        <h3>添加新员工</h3>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="请输入姓名">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="请输入邮箱">
+        </div>
+        <div class="form-group">
+            <label for="salary">Salary:</label>
+            <input type="number" id="salary" placeholder="请输入薪资">
+        </div>
+        <button class="submit-btn" onclick="addEmployee()">Submit</button>
+		</div>
+    </div>
+
+    <script>
+        // 删除员工
+        function deleteEmployee(button) {
+            // 获取按钮所在的行元素
+            const row = button.parentElement.parentElement;
+            // 从表格中移除该行
+            document.getElementById("employeeTable").deleteRow(row.rowIndex);
+        }
+
+        // 添加员工
+        function addEmployee() {
+            // 获取输入框的值
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const salary = document.getElementById("salary").value.trim();
+
+            // 简单验证
+            if (!name || !email || !salary) {
+                alert("请填写完整信息");
+                return;
+            }
+
+            // 获取表格
+            const table = document.getElementById("employeeTable");
+            // 创建新行
+            const newRow = table.insertRow();
+
+            // 插入姓名单元格
+            const nameCell = newRow.insertCell(0);
+            nameCell.textContent = name;
+
+            // 插入邮箱单元格
+            const emailCell = newRow.insertCell(1);
+            emailCell.textContent = email;
+
+            // 插入薪资单元格
+            const salaryCell = newRow.insertCell(2);
+            salaryCell.textContent = salary;
+
+            // 插入操作按钮单元格
+            const actionCell = newRow.insertCell(3);
+            actionCell.innerHTML = '<button class="delete-btn" onclick="deleteEmployee(this)">Delete</button>';
+
+            // 清空输入框
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("salary").value = "";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>本地图片Tab选项卡</title>
+    <style>
+        .tab-btn {
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+        .tab-btn.active {
+            background: blue;
+            color: white;
+        }
+        .tab-panel {
+            display: none;
+            margin-top: 10px;
+        }
+        .tab-panel.active {
+            display: block;
+        }
+        /* 适配本地图片显示，避免尺寸溢出 */
+        .tab-panel img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- 选项卡按钮（对应4个图片） -->
+    <button class="tab-btn active" onclick="switchTab(1)">图片1</button>
+    <button class="tab-btn" onclick="switchTab(2)">图片2</button>
+    <button class="tab-btn" onclick="switchTab(3)">图片3</button>
+    <button class="tab-btn" onclick="switchTab(4)">图片4</button>
+
+    <!-- 替换成你指定的本地图片路径 -->
+    <div id="tab1" class="tab-panel active">
+        <img src="img/1.png" alt="示例图片1">
+    </div>
+    <div id="tab2" class="tab-panel">
+        <img src="img/2.png" alt="示例图片2">
+    </div>
+    <div id="tab3" class="tab-panel">
+        <img src="img/3.png" alt="示例图片3">
+    </div>
+    <div id="tab4" class="tab-panel">
+        <img src="img/bj1.png" alt="示例图片4">
+    </div>
+
+    <script>
+        // 适配4个选项卡的切换函数
+        function switchTab(num) {
+            // 隐藏所有面板
+            document.getElementById("tab1").classList.remove("active");
+            document.getElementById("tab2").classList.remove("active");
+            document.getElementById("tab3").classList.remove("active");
+            document.getElementById("tab4").classList.remove("active");
+            
+            // 移除所有按钮激活状态
+            var btns = document.getElementsByClassName("tab-btn");
+            for(var i=0; i<btns.length; i++){
+                btns[i].classList.remove("active");
+            }
+            
+            // 激活当前面板和按钮
+            document.getElementById("tab"+num).classList.add("active");
+            btns[num-1].classList.add("active");
+        }
+    </script>
+</body>
+</html>

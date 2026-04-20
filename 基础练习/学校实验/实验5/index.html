@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>图片切换示例</title>
+    <style>
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 5px solid #7FFF00; /* 亮绿色边框 */
+            display: inline-block;
+        }
+        .info {
+            color: #000;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        #imageDisplay {
+            width: 400px;
+            height: 300px;
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
+        button {
+            margin: 0 5px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+		body{
+			background: no-repeat center 0 fixed url(img/yzs.jpg);
+			background-size: cover;
+		}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="info">一共5张图片，当前第<span id="currentIndex">1</span>张</div>
+        <img id="imageDisplay" src="img/1.jpg" alt="图片展示">
+        <div>
+            <button onclick="changeImage(-1)">上一张</button>
+            <button onclick="changeImage(1)">下一张</button>
+        </div>
+    </div>
+
+    <script>
+        // 图片路径数组（实际使用时替换为真实图片路径）
+        const imagePaths = [
+            "img/1.jpg",
+            "img/2.png",
+            "img/3.png",
+            "img/4.jpg",
+            "img/5.jpg"
+        ];
+        let currentIndex = 0; // 当前图片索引（从0开始）
+
+        // 切换图片函数
+        function changeImage(direction) {
+            // 计算新索引（处理边界情况，超过范围时循环切换）
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = imagePaths.length - 1;
+            } else if (currentIndex >= imagePaths.length) {
+                currentIndex = 0;
+            }
+
+            // 更新图片显示
+            const imgElement = document.getElementById("imageDisplay");
+            imgElement.src = imagePaths[currentIndex];
+
+            // 更新当前张数显示（索引+1转为实际张数）
+            document.getElementById("currentIndex").textContent = currentIndex + 1;
+        }
+    </script>
+</body>
+</html>

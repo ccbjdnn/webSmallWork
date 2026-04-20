@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 外部容器，用于使内部蓝色小盒子居中 */
+			.container {
+			    width: 500px; /* 外部容器宽度 */
+			    height: 500px; /* 外部容器高度 */
+			    background-color: pink; /* 外部容器背景色为粉色 */
+			    display: flex; /* 使用 Flex 布局 */
+			    justify-content: center; /* 水平居中 */
+			    align-items: center; /* 垂直居中 */
+			}
+			/* 内部蓝色小盒子 */
+			.box {
+			    width: 100px; /* 小盒子宽度 */
+			    height: 100px; /* 小盒子高度 */
+			    background-color: blue; /* 小盒子背景色为蓝色 */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+		        <div class="box"></div>
+		    </div>
+	</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>电影票选座系统</title>
+    <style>
+        /* 整体容器 */
+        .cinema-container {
+            width: 500px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        /* 屏幕样式 */
+        .screen {
+            width: 80%;
+            height: 30px;
+            line-height: 30px;
+            background-color: #eee;
+            border-radius: 5px;
+            margin: 0 auto 30px;
+            color: #666;
+            font-size: 14px;
+        }
+        /* 座位网格 */
+        .seats-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            width: 80%;
+            margin: 0 auto 20px;
+        }
+        /* 座位样式 */
+        .seat {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background-color 0.2s;
+        }
+        /* 可选座位 hover 效果 */
+        .seat.available:hover {
+            background-color: #b0d8ff;
+        }
+        /* 已选/已占座位 */
+        .seat.selected {
+            background-color: #ff9900;
+            color: white;
+            cursor: not-allowed;
+        }
+        /* 用户选中的座位 */
+        .seat.user-selected {
+            background-color: #0088ff;
+            color: white;
+        }
+        /* 确定按钮样式 */
+        #confirmBtn {
+            padding: 8px 20px;
+            margin-top: 10px;
+            background-color: #0088ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #confirmBtn:hover {
+            background-color: #0066cc;
+        }
+        /* 选中座位信息展示 */
+        .selected-info {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="cinema-container">
+        <h2>电影票选座</h2>
+        <div class="screen">屏幕中央</div>
+        <div class="seats-grid" id="seatsGrid">
+            <!-- 座位通过JS动态生成 -->
+        </div>
+        
+        <!-- 确定按钮和选中信息展示 -->
+        <button id="confirmBtn">确定选座</button>
+        <div class="selected-info" id="selectedInfo"></div>
+    </div>
+
+    <script>
+        const seatsGrid = document.getElementById('seatsGrid');
+        const confirmBtn = document.getElementById('confirmBtn');
+        const selectedInfo = document.getElementById('selectedInfo');
+        const rows = 6; // 行数
+        const cols = 6; // 列数
+        // 模拟已被占用的座位（行索引，列索引）
+        const occupiedSeats = [[3, 1], [3, 2]]; 
+
+        // 生成座位
+        for (let i = 0; i < rows; i++) {
+            for (let j = 0; j < cols; j++) {
+                const seat = document.createElement('div');
+                seat.className = 'seat';
+                seat.dataset.row = i;
+                seat.dataset.col = j;
+                seat.dataset.name = `${i+1}排${j+1}座`;
+                
+                // 判断是否为已占用座位
+                const isOccupied = occupiedSeats.some(([r, c]) => r === i && c === j);
+                if (isOccupied) {
+                    seat.classList.add('selected');
+                    seat.textContent = '座位已选';
+                } else {
+                    seat.classList.add('available');
+                    seat.textContent = seat.dataset.name;
+                }
+
+                // 选座交互
+                seat.addEventListener('click', () => {
+                    if (seat.classList.contains('available')) {
+                        seat.classList.toggle('user-selected');
+                        updateSelectedInfo(); // 更新选中信息
+                    }
+                });
+
+                seatsGrid.appendChild(seat);
+            }
+        }
+
+        // 更新选中座位信息
+        function updateSelectedInfo() {
+            const selectedSeats = document.querySelectorAll('.seat.user-selected');
+            if (selectedSeats.length === 0) {
+                selectedInfo.textContent = '未选择任何座位';
+                return;
+            }
+            const seatNames = Array.from(selectedSeats).map(seat => seat.dataset.name).join('、');
+            selectedInfo.textContent = `已选座位：${seatNames}`;
+        }
+
+        // 确定选座按钮点击事件
+        confirmBtn.addEventListener('click', () => {
+            const selectedSeats = document.querySelectorAll('.seat.user-selected');
+            if (selectedSeats.length === 0) {
+                alert('请选择座位后再确认！');
+                return;
+            }
+            const seatNames = Array.from(selectedSeats).map(seat => seat.dataset.name).join('、');
+            alert(`选座成功！您选择的座位是：${seatNames}\n请前往支付~`);
+            
+            // 可选：确认后锁定座位（变为已占状态）
+            selectedSeats.forEach(seat => {
+                seat.classList.remove('user-selected', 'available');
+                seat.classList.add('selected');
+                seat.textContent = '座位已选';
+            });
+            updateSelectedInfo(); // 重置信息展示
+        });
+
+        // 初始化信息展示
+        updateSelectedInfo();
+    </script>
+</body>
+</html>

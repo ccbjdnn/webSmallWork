@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>自定义空格三角形</title>
+    <style>
+        #shape {
+            white-space: pre; /* 保留空格和换行，确保格式一致 */
+            font-family: Consolas, monospace; /* 等宽字体，避免空格/星号错位 */
+        }
+    </style>
+</head>
+<body>
+    <div id="shape"></div>
+
+    <script>
+        const shapeDiv = document.getElementById('shape');
+        // 直接定义每行的“空格数+星号数”，完全匹配目标图形
+        const triangleRows = [
+            { spaces: 4, stars: 1 },
+            { spaces: 3, stars: 2 }, 
+            { spaces: 2, stars: 3 },  
+            { spaces: 1, stars: 4 },  
+            { spaces: 0, stars: 5 }  
+        ];
+
+        // 拼接所有行内容
+        let result = '';
+        triangleRows.forEach(row => {
+            const line = ' '.repeat(row.spaces) + '*'.repeat(row.stars) + '\n';
+            result += line;
+        });
+
+        shapeDiv.textContent = result;
+    </script>
+</body>
+</html>

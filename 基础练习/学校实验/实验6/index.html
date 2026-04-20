@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>相框选择-图片切换</title>
+  <style>
+    .big-img-container {
+      width: 80%;
+      margin: 20px auto;
+    }
+    #bigImg {
+      width: 100%;
+      height: auto;
+    }
+    .small-imgs-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .small-img {
+      width: 150px;
+      height: auto;
+      border: 2px solid #ccc;
+      cursor: pointer;
+    }
+    .small-img.active {
+      border-color: red;
+    }
+  </style>
+</head>
+<body>
+  <!-- 大图显示区域 -->
+  <div class="big-img-container">
+    <img id="bigImg" src="img/1.jpg" alt="大图展示">
+  </div>
+
+  <!-- 小图选择区域 -->
+  <div class="small-imgs-container">
+    <img class="small-img active" src="img/1.jpg" alt="小图1" data-big="img/1.jpg">
+    <img class="small-img" src="img/2.png" alt="小图2" data-big="img/2.png">
+    <img class="small-img" src="img/3.png" alt="小图3" data-big="img/3.png">
+    <img class="small-img" src="img/4.jpg" alt="小图4" data-big="img/4.jpg">
+  </div>
+
+  <script>
+    const smallImgs = document.querySelectorAll('.small-img');
+    const bigImg = document.getElementById('bigImg');
+
+    smallImgs.forEach(img => {
+      img.addEventListener('click', function() {
+        smallImgs.forEach(item => item.classList.remove('active'));
+        this.classList.add('active');
+        bigImg.src = this.getAttribute('data-big');
+      });
+    });
+  </script>
+</body>
+</html>

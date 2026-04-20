@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>网页抽奖机</title>
+    <style>
+        /* 容器样式 */
+        .lottery-container {
+            text-align: center;
+            margin: 50px auto;
+            width: 400px;
+        }
+        /* 抽奖表格样式 */
+        .lottery-table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        .lottery-table td {
+            width: 100px;
+            height: 60px;
+            border: 2px solid #333;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #f0f0f0;
+            cursor: default;
+            /* 背景图片相关默认设置 */
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        /* 高亮样式 */
+        .lottery-table td.active {
+            background-color: #ff9900;
+            color: white;
+            background-image: none !important;
+        }
+        /* 特等奖单元格样式：设置背景图片 */
+        .special-award {
+            background-image: url('img/1.jpg'); /* 替换为你的图片路径 */
+            background-size: cover; /* 图片覆盖单元格，自动适配大小 */
+            color: #fff; /* 文字白色，提高可读性 */
+            text-shadow: 1px 1px 2px #000; /* 文字阴影，增强对比 */
+        }
+        /* 按钮样式（嵌入表格） */
+        #startBtn {
+            width: 100%;
+            height: 100%;
+            font-size: 16px;
+            background-color: #0088ff;
+            color: white;
+            border: none;
+            border-radius: 0; /* 去掉圆角，适配表格单元格 */
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #startBtn:hover {
+            background-color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="lottery-container">
+        <h2>幸运抽奖机</h2>
+        <!-- 3×3抽奖表格：中间单元格放按钮，特等奖单元格添加class -->
+        <table class="lottery-table" id="lotteryTable">
+            <tr>
+                <td>一等奖</td>
+                <td>二等奖</td>
+                <td>三等奖</td>
+            </tr>
+            <tr>
+                <td>四等奖</td>
+                <td>
+                    <!-- 按钮嵌入中间单元格 -->
+                    <button id="startBtn">开始抽奖</button>
+                </td>
+                <td>五等奖</td>
+            </tr>
+            <tr>
+                <td>六等奖</td>
+                <td class="special-award">特等奖</td> <!-- 添加special-award类 -->
+                <td>谢谢参与</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // 获取DOM元素（排除中间按钮单元格）
+        const lotteryTable = document.getElementById('lotteryTable');
+        const startBtn = document.getElementById('startBtn');
+        // 筛选所有奖项单元格（排除包含按钮的中间单元格）
+        const cells = Array.from(lotteryTable.getElementsByTagName('td')).filter(cell => !cell.contains(startBtn));
+        let timer = null; // 滚动定时器ID
+        let timeoutList = []; // 存储嵌套的setTimeout ID
+        let isRunning = false; // 抽奖状态标记
+
+        // 随机高亮单元格
+        function highlightRandomCell() {
+            // 清除所有高亮
+            cells.forEach(cell => cell.classList.remove('active'));
+            // 随机选择一个单元格高亮
+            const randomIndex = Math.floor(Math.random() * cells.length);
+            cells[randomIndex].classList.add('active');
+        }
+
+        // 清除所有定时器
+        function clearAllTimers() {
+            clearInterval(timer);
+            timeoutList.forEach(timeoutId => clearTimeout(timeoutId));
+            timeoutList = [];
+        }
+
+        // 开始/停止抽奖逻辑
+        startBtn.addEventListener('click', function() {
+            if (isRunning) {
+                // 停止抽奖
+                clearAllTimers();
+                isRunning = false;
+                startBtn.textContent = '开始抽奖';
+            } else {
+                // 开始抽奖
+                isRunning = true;
+                startBtn.textContent = '停止抽奖';
+                
+                // 初始快速滚动
+                timer = setInterval(highlightRandomCell, 50);
+                
+                // 模拟减速停止
+                const timeout1 = setTimeout(() => {
+                    clearInterval(timer);
+                    timer = setInterval(highlightRandomCell, 100);
+                    
+                    const timeout2 = setTimeout(() => {
+                        clearInterval(timer);
+                        timer = setInterval(highlightRandomCell, 200);
+                        
+                        const timeout3 = setTimeout(() => {
+                            clearAllTimers();
+                            highlightRandomCell();
+                            isRunning = false;
+                            startBtn.textContent = '开始抽奖';
+                        }, 1000);
+                        timeoutList.push(timeout3);
+                    }, 1000);
+                    timeoutList.push(timeout2);
+                }, 2000);
+                timeoutList.push(timeout1);
+            }
+        });
+    </script>
+</body>
+</html>

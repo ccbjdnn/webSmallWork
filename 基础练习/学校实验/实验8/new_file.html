@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>自动轮播图</title>
+    <style>
+        /* 轮播容器样式 */
+        .carousel-container {
+            width: 600px;
+            height: 400px;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+            border: 10px solid #7FFF00; /* 绿色边框，匹配示例风格 */
+            border-radius: 5px;
+        }
+        
+        /* 图片列表容器 */
+        .carousel-list {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            transition: transform 0.5s ease; /* 平滑切换动画 */
+        }
+        
+        /* 轮播图片样式 */
+        .carousel-item {
+            min-width: 100%;
+            height: 100%;
+            object-fit: cover; /* 图片自适应容器，保持比例 */
+        }
+        
+        /* 左右切换按钮 */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .prev-btn {
+            left: 10px;
+        }
+        
+        .next-btn {
+            right: 10px;
+        }
+        
+        .carousel-btn:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        /* 指示器容器 */
+        .indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+        
+        /* 指示器圆点 */
+        .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .indicator.active {
+            background-color: white; /* 激活状态为白色 */
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <!-- 图片列表 -->
+        <div class="carousel-list" id="carouselList">
+            <!-- 轮播图片（可替换为实际图片路径） -->
+            <img src="img/1.png" class="carousel-item" alt="图片1">
+            <img src="img/8.jpg" class="carousel-item" alt="图片2">
+            <img src="img/17.png" class="carousel-item" alt="图片3">
+            <img src="img/18.png" class="carousel-item" alt="图片4">
+        </div>
+        
+        <!-- 左右切换按钮 -->
+        <button class="carousel-btn prev-btn" id="prevBtn">←</button>
+        <button class="carousel-btn next-btn" id="nextBtn">→</button>
+        
+        <!-- 指示器 -->
+        <div class="indicators" id="indicators"></div>
+    </div>
+
+    <script>
+        // 获取DOM元素
+        const carouselList = document.getElementById('carouselList');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const indicators = document.getElementById('indicators');
+        const items = document.querySelectorAll('.carousel-item');
+        
+        // 轮播参数
+        let currentIndex = 0; // 当前显示的图片索引
+        const itemCount = items.length; // 图片总数
+        let timer = null; // 自动轮播定时器
+        const interval = 3000; // 自动切换间隔（毫秒）
+
+        // 初始化指示器
+        function initIndicators() {
+            for (let i = 0; i < itemCount; i++) {
+                const indicator = document.createElement('div');
+                indicator.className = `indicator ${i === 0 ? 'active' : ''}`;
+                indicator.addEventListener('click', () => goToSlide(i));
+                indicators.appendChild(indicator);
+            }
+        }
+
+        // 切换到指定图片
+        function goToSlide(index) {
+            currentIndex = index;
+            // 计算偏移量（负号表示向左移动）
+            const offset = -currentIndex * 100;
+            carouselList.style.transform = `translateX(${offset}%)`;
+            // 更新指示器状态
+            updateIndicators();
+        }
+
+        // 更新指示器激活状态
+        function updateIndicators() {
+            const indicatorList = document.querySelectorAll('.indicator');
+            indicatorList.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        // 下一张图片
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % itemCount;
+            goToSlide(currentIndex);
+        }
+
+        // 上一张图片
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+            goToSlide(currentIndex);
+        }
+
+        // 启动自动轮播
+        function startAutoPlay() {
+            timer = setInterval(nextSlide, interval);
+        }
+
+        // 停止自动轮播
+        function stopAutoPlay() {
+            clearInterval(timer);
+        }
+
+        // 绑定事件
+        prevBtn.addEventListener('click', () => {
+            stopAutoPlay(); // 点击时停止自动轮播
+            prevSlide();
+            startAutoPlay(); // 切换后重新启动
+        });
+
+        nextBtn.addEventListener('click', () => {
+            stopAutoPlay();
+            nextSlide();
+            startAutoPlay();
+        });
+
+        // 鼠标悬停时停止轮播，离开时继续
+        carouselList.addEventListener('mouseenter', stopAutoPlay);
+        carouselList.addEventListener('mouseleave', startAutoPlay);
+
+        // 初始化
+        initIndicators();
+        startAutoPlay();
+    </script>
+</body>
+</html>
